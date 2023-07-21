@@ -1,6 +1,6 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="/Dashboard/dashboard.php" class="brand-link">
+    <a href="/evoting/Dashboard/dashboard.php" class="brand-link">
         <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
             style="opacity: .8">
         <span class="brand-text font-weight-light">Admin Dashboard</span>
@@ -246,7 +246,7 @@
                                     function displayVoter() {
                                         var displayVoter = "true";
                                         $.ajax({
-                                            url: "/Dashboard/voterinfo/voterview.php",
+                                            url: "/evoting/Dashboard/voterinfo/voterview.php",
                                             type: 'post',
                                             data: {
                                                 voterdisplay: displayVoter
@@ -263,7 +263,7 @@
                                         var voterbatch = $('#voterbatch').val();
                                         var voterStudentId = $('#voterStudentId').val();
                                         $.ajax({
-                                            url: "/Dashboard/voterinfo/voteradd.php",
+                                            url: "/evoting/Dashboard/voterinfo/voteradd.php",
                                             type: 'post',
                                             data: {
                                                 voternameSend: votername,
@@ -301,7 +301,7 @@
                                                 </button>
                                             </div>
                                             <div class="modal-body">
-                                                <form action="/Dashboard/voterinfo/uploadBulkVoter.php" id="uploadVoterExcelFileForm" method="post" enctype="multipart/form-data">
+                                                <form action="/evoting/Dashboard/voterinfo/uploadBulkVoter.php" id="uploadVoterExcelFileForm" method="post" enctype="multipart/form-data">
                                                     <div class="form-group">
                                                         <label for="name">Upload Excel File</label>
                                                         <input type="file" class="form-control" name="bulkExcelFile" id="voterListExcelFile"
@@ -326,7 +326,7 @@
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a href="/Dashboard/voterinfo/Voterlist.php" class="nav-link">
+                                <a href="/evoting/Dashboard/voterinfo/Voterlist.php" class="nav-link">
                                     <div class="container sidebar-dark-primary"
                                         style="margin-left:-1px;border:none;color:white;margin-top:-0px;">
                                         <i class="far fa-circle nav-icon"></i>
@@ -453,7 +453,7 @@
                                     function displayData() {
                                         var displayData = "true";
                                         $.ajax({
-                                            url: "/Dashboard/postinfo/fetchpost.php",
+                                            url: "/evoting/Dashboard/postinfo/fetchpost.php",
                                             type: 'post',
                                             data: {
                                                 displaySend: displayData
@@ -468,7 +468,7 @@
                                         var post = $('#posttype').val();
                                         var desc = $('#desc').val();
                                         $.ajax({
-                                            url: "/Dashboard/postinfo/add.php",
+                                            url: "/evoting/Dashboard/postinfo/add.php",
                                             type: 'post',
                                             data: {
                                                 numSend: num,
@@ -487,7 +487,7 @@
 
                             </li>
                             <li class="nav-item">
-                                <a href="/Dashboard/postinfo/viewpost.php" class="nav-link">
+                                <a href="/evoting/Dashboard/postinfo/viewpost.php" class="nav-link">
                                     <div class="container" class="sidebar-dark-primary"
                                         style="margin-left:0px;border:none;color:white;">
                                         <i class="far fa-circle nav-icon"></i>
@@ -507,7 +507,7 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="/Dashboard/candidate/candidatelist.php" class="nav-link">
+                                <a href="/evoting/Dashboard/candidate/candidatelist.php" class="nav-link">
                                     <div class="container" class="sidebar-dark-primary"
                                         style="margin-left:0px;border:none;color:white;">
                                         <i class="far fa-circle nav-icon"></i>

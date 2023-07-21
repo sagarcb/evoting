@@ -108,7 +108,7 @@
                     function displayVoter() {
                         var displayVoter = "true";
                         $.ajax({
-                            url: "/Dashboard/voterinfo/voterview.php",
+                            url: "/evoting/Dashboard/voterinfo/voterview.php",
                             type: 'post',
                             data: {
                                 voterdisplay: displayVoter
@@ -122,7 +122,7 @@
                         $('#voterhiddendata').val(voterupdateid);
                         $.ajax({
                             type: 'post',
-                            url: '/Dashboard/voterinfo/updatevoter.php',
+                            url: '/evoting/Dashboard/voterinfo/updatevoter.php',
                             data: {
                                 vupdateid: voterupdateid
                             },
@@ -156,7 +156,7 @@
                         var voterhiddendata = $('#voterhiddendata').val();
                         var student_id = $('#updateVoterId').val();
 
-                        $.post("/Dashboard/voterinfo/updatevoter.php", {
+                        $.post("/evoting/Dashboard/voterinfo/updatevoter.php", {
                             updatename: updatename,
                             updateemail: updateemail,
                             updatepass: updatepass,
@@ -172,7 +172,7 @@
 
                     function deletevoter(voterdeleteid) {
                         $.ajax({
-                            url: "/Dashboard/voterinfo/deletevoter.php",
+                            url: "/evoting/Dashboard/voterinfo/deletevoter.php",
                             type: 'post',
                             data: {
                                 voterdeletesend: voterdeleteid

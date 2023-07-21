@@ -39,22 +39,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $result = mysqli_query($conn, $query);
                 if (!$result) {
                     $_SESSION['bulkVoterAdd'] = 0;
-                    header('Location:/Dashboard/voterinfo/Voterlist.php');
+                    header('Location:/evoting/Dashboard/voterinfo/Voterlist.php');
                     exit();
                 }
             }catch (Exception $exception) {
                 echo $exception->getMessage();
                 $_SESSION['bulkVoterAdd'] = 0;
-                header('Location:/Dashboard/voterinfo/Voterlist.php');
+                header('Location:/evoting/Dashboard/voterinfo/Voterlist.php');
                 exit();
             }
         }
         $_SESSION['bulkVoterAdd'] = 1;
-        header('Location:/Dashboard/voterinfo/Voterlist.php');
+        header('Location:/evoting/Dashboard/voterinfo/Voterlist.php');
         exit();
     } else {
         $_SESSION['bulkVoterAdd'] = 0;
-        header('Location:/Dashboard/voterinfo/Voterlist.php');
+        header('Location:/evoting/Dashboard/voterinfo/Voterlist.php');
         exit();
     }
 }

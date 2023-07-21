@@ -23,10 +23,16 @@ if (isset($_POST['candidateAdd']) && $_POST['candidateAdd']) {
         $sql = "insert into `candidateinfo`(candidateid,candidatename,candidatemail,batch,postid) values('$candidateid','$nameSend','$emailSend','$batchSend','$posttSend')";
         $res = mysqli_query($conn, $sql);
         if ($res) {
-            echo true;
+            $response = [
+                'status' => true
+            ];
         }else {
-            echo false;
+            $response = [
+                'status' => 'false',
+                'msg' => 'Something went wrong. Please try again'
+            ];
         }
+        json_encode($response);
         exit();
 
     }else {

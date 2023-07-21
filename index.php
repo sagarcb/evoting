@@ -33,7 +33,7 @@
      if ($row) {
          $_SESSION['email_verification_status'] = $row['email_verification_status'];
          if ($row['email_verification_status'] == '1') {
-             header("Location:/evoting/Dashboard/dashboard.php");
+             header("Location:Dashboard/dashboard.php");
          }
      }
  }

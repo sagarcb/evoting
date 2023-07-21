@@ -76,15 +76,17 @@ $(document).ready(function () {
             success: function (response) {
                 let res = JSON.parse(response);
                 console.log(res);
-                if (res.status) {
-                    displayCandidate();
-                    $(errorMsgContainer).hide();
-                    $(errorMsgContainer).text('');
-                    $(addCandidateModal).modal('hide');
-                }else {
-                    $(errorMsgContainer).show();
-                    $(errorMsgContainer).text(res.msg);
-                }
+                displayCandidate();
+                $(addCandidateModal).modal('hide');
+                // if (res.status) {
+                //     displayCandidate();
+                //     $(errorMsgContainer).hide();
+                //     $(errorMsgContainer).text('');
+                //     $(addCandidateModal).modal('hide');
+                // }else {
+                //     $(errorMsgContainer).show();
+                //     $(errorMsgContainer).text(res.msg);
+                // }
             }
         });
     }

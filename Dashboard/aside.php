@@ -192,8 +192,8 @@
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <label for="voterStudentId">Voter ID</label>
-                                                    <input type="text" class="form-control" id="voterStudentId" placeholder="Voter ID">
+                                                    <label for="voterStudentId">Student ID</label>
+                                                    <input type="text" class="form-control" id="voterStudentId" placeholder="Student ID">
                                                 </div>
                                             </div>
                                             <div class="modal-footer">
@@ -330,7 +330,7 @@
                                     <div class="container sidebar-dark-primary"
                                         style="margin-left:-1px;border:none;color:white;margin-top:-0px;">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>view voter list</p>
+                                        <p>View Voter List</p>
                                     </div>
                                 </a>
                             </li>

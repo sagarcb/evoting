@@ -86,8 +86,8 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="updateVoterId">Voter Batch</label>
-                                <input type="text" class="form-control" id="updateVoterId" placeholder="Voter ID">
+                                <label for="updateVoterId">Student ID</label>
+                                <input type="text" class="form-control" id="updateVoterId" placeholder="Student ID">
                             </div>
 
                             <div class="modal-footer">

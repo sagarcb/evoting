@@ -74,10 +74,10 @@ $(document).ready(function () {
                 candidateAdd: true
             },
             success: function (response) {
-                let res = JSON.parse(response);
                 console.log(res);
                 displayCandidate();
                 $(addCandidateModal).modal('hide');
+                let res = JSON.parse(response);
                 // if (res.status) {
                 //     displayCandidate();
                 //     $(errorMsgContainer).hide();

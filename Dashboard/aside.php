@@ -121,7 +121,7 @@
                                         var starttime = $('#starttime').val();
                                         var endtime = $('#endtime').val();
                                         $.ajax({
-                                            url: "./Dashboard/electioninfo/addelection.php",
+                                            url: "/evoting/Dashboard/electioninfo/addelection.php",
                                             type: 'post',
                                             data: {
                                                 electiontitle: electiontitle,

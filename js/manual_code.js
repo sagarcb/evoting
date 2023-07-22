@@ -74,19 +74,17 @@ $(document).ready(function () {
                 candidateAdd: true
             },
             success: function (response) {
-                console.log(res);
-                displayCandidate();
-                $(addCandidateModal).modal('hide');
+                console.log(response);
                 let res = JSON.parse(response);
-                // if (res.status) {
-                //     displayCandidate();
-                //     $(errorMsgContainer).hide();
-                //     $(errorMsgContainer).text('');
-                //     $(addCandidateModal).modal('hide');
-                // }else {
-                //     $(errorMsgContainer).show();
-                //     $(errorMsgContainer).text(res.msg);
-                // }
+                if (res.status) {
+                    displayCandidate();
+                    $(errorMsgContainer).hide();
+                    $(errorMsgContainer).text('');
+                    $(addCandidateModal).modal('hide');
+                }else {
+                    $(errorMsgContainer).show();
+                    $(errorMsgContainer).text(res.msg);
+                }
             }
         });
     }

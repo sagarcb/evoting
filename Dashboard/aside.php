@@ -542,4 +542,3 @@
     </div>
     <!-- /.sidebar -->
 </aside>
-<script src="/js/manual_code.js"></script>

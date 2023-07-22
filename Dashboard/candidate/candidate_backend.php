@@ -26,13 +26,15 @@ if (isset($_POST['candidateAdd']) && $_POST['candidateAdd']) {
             $response = [
                 'status' => true
             ];
+            echo json_encode($response);
+            exit();
         }else {
             $response = [
                 'status' => 'false',
                 'msg' => 'Something went wrong. Please try again'
             ];
         }
-        json_encode($response);
+        echo json_encode($response);
         exit();
 
     }else {

@@ -128,6 +128,7 @@
                             },
                             success: function (res) {
                                 let response = JSON.parse(res);
+                                console.log(response);
                                 if (response.status) {
                                     updateVoterModal(response);
                                     $('#updatevotermodal').modal("show");

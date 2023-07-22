@@ -16,6 +16,7 @@ if (isset($_POST['vupdateid'])) {
         $row['password'] = openssl_decrypt ($row['password'], $ciphering, $encryption_key, $options, $encryption_iv);
         $response = $row;
     }
+    $response['status'] = true;
     echo json_encode($response);
     exit();
 } else {

@@ -8,6 +8,7 @@ if (isset($_POST['voterdisplay'])) {
       <th scope="col">Voter Name</th>
       <th scope="col">Voter Email</th>
       <th scope="col">Voter Batch</th>
+      <th scope="col">Student ID</th>
        <th scope="col">Action</th>
         
     </tr>
@@ -25,6 +26,7 @@ if (isset($_POST['voterdisplay'])) {
       <td>' . $votername . '</td>
       <td>' . $voteremail . '</td>
       <td>' . $voterbatch . '</td>
+      <td>' . $row['student_id'] . '</td>
       <td>
     <button class="btn btn-dark" onclick="voteredit(' . $id . ')">Update</button>
     <button class="btn btn-danger"onclick="deletevoter(' . $id . ')">Delete</button>

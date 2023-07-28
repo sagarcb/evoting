@@ -35,7 +35,7 @@ if (!empty($email) && !empty($password)) {
                         $receiver = $email;
                         $subject = "From:  <$email>";
                         $body = "Name " . "\n Email" . " $email \n Otp" . " $otp";
-                        $sender = "From: nayansahadip99@gmail.com";
+                        $sender = "From: shonpollock0@gmail.com";
 
                         if (mail($receiver, $subject, $body, $sender)) {
                             echo "success";

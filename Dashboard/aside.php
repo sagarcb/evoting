@@ -629,4 +629,34 @@
     <!-- /.sidebar -->
 </aside>
 
+<script>
+    $(document).ready(function () {
+        /*Upload bulk voter list functionalities*/
+        var uploadBulkVoterBtn = $('#uploadBulkVoterBtn');
+        var uploadBulkVoterForm = $('#uploadVoterExcelFileForm');
+
+        var loader = $('#loader');
+        $(uploadBulkVoterBtn).on('click', function () {
+            uploadBulkVoter();
+        });
+        function uploadBulkVoter() {
+            $(uploadBulkVoterForm).submit();
+        }
+
+        function displayCandidate() {
+            var displayCandidate = "true";
+            $.ajax({
+                url: "candidateview.php",
+                type: 'post',
+                data: {
+                    candidateDisplay: displayCandidate
+                },
+                success: function (data, status) {
+                    $("#displaycandidate").html(data);
+                }
+            });
+        }
+    })
+</script>
+
 <script src="/evoting/js/reset-data.js"></script>

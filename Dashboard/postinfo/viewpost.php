@@ -106,7 +106,7 @@
         .modal-content {
           border: 1px solid blue;
           width: 600px;
-          height: 535px;
+          height: 596px;
 
         }
 

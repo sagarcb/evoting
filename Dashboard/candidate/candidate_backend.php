@@ -18,8 +18,9 @@ if (isset($_POST['candidateAdd']) && $_POST['candidateAdd']) {
             echo json_encode($response);
             exit();
         }
+        $candidateid = rand(10000,99999);
 
-        $sql = "insert into `candidateinfo`(candidatename,candidatemail,batch,postid) values('$candidateid','$nameSend','$emailSend','$batchSend','$posttSend')";
+        $sql = "insert into `candidateinfo`(candidateid,candidatename,candidatemail,batch,postid) values('$candidateid','$nameSend','$emailSend','$batchSend','$posttSend')";
         $res = mysqli_query($conn, $sql);
         if ($res) {
             $response = [

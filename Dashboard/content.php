@@ -11,6 +11,28 @@
 
         <section class="content">
             <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <?php if (isset($_SESSION['success_msg'])) { ?>
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <strong><?=$_SESSION['success_msg']?></strong>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <?php } ?>
+
+                        <?php if (isset($_SESSION['error_msg'])) { ?>
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                <strong><?=$_SESSION['error_msg']?></strong>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        <?php } ?>
+                    </div>
+                </div>
+
                 <!-- Small boxes (Stat box) -->
                 <div class="row">
                     <div class="col-lg-3 col-6">
@@ -125,3 +147,8 @@
 </section>
 <!-- /.content -->
 </div>
+
+<?php
+unset($_SESSION['success_msg']);
+unset($_SESSION['error_msg']);
+?>

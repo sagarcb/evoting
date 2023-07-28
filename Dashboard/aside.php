@@ -1,7 +1,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="/evoting/Dashboard/dashboard.php" class="brand-link">
-        <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+        <img src="/evoting/Dashboard/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
             style="opacity: .8">
         <span class="brand-text font-weight-light">Admin Dashboard</span>
     </a>
@@ -22,7 +22,6 @@
                             <p>
                                 Update election info
                                 <i class="fas fa-angle-left right"></i>
-                                <span class="badge badge-info right">6</span>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
@@ -390,23 +389,7 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="posttype">Post Type</label>
-
-                                                    <select name="post" type="text" id="posttype" class="form-control">
-                                                        <option value="0">0</option>
-                                                        <option value="1">51</option>
-                                                        <option value="2">52</option>
-                                                        <option value="3">53</option>
-                                                        <option value="4">54</option>
-                                                        <option value="4">55</option>
-                                                        <option value="4">56</option>
-                                                        <option value="4">57</option>
-                                                        <option value="4">58</option>
-                                                        <option value="4">59</option>
-                                                        <option value="4">60</option>
-                                                        <option value="4">61</option>
-                                                        <option value="4">62</option>
-                                                    </select>
-
+                                                    <input type="number" name="posttype" id="posttype" class="form-control">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="desc">Post Description</label>
@@ -525,23 +508,118 @@
                             </li>
                         </ul>
                     </li>
+<!--                    <li class="nav-item">-->
+<!--                        <a href="pages/calendar.html" class="nav-link">-->
+<!--                            <i class="nav-icon far fa-calendar-alt"></i>-->
+<!--                            <p>-->
+<!--                                View Result-->
+<!--                                <span class="badge badge-info right">2</span>-->
+<!--                            </p>-->
+<!--                        </a>-->
+<!--                    </li>-->
                     <li class="nav-item">
-                        <a href="pages/calendar.html" class="nav-link">
-                            <i class="nav-icon far fa-calendar-alt"></i>
-                            <p>
-                                View Result
-                                <span class="badge badge-info right">2</span>
-                            </p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="pages/calendar.html" class="nav-link">
-                            <i class="nav-icon far fa-calendar-alt"></i>
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-circle"></i>
                             <p>
                                 Reset Data
-                                <span class="badge badge-info right">2</span>
+                                <i class="fas fa-angle-left right"></i>
                             </p>
                         </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="#" class="nav-link" data-target="#singleVoteCastModal" data-toggle="modal">
+                                    <div class="container sidebar-dark-primary">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Reset Single Vote Cast</p>
+                                    </div>
+                                </a>
+                                <div class="modal hide fade" id="singleVoteCastModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content" style="height: auto">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Reset Single Vote Cast</h5>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <form action="/evoting/Dashboard/reset/reset_single_vote_cast.php" method="post" id="resetSingleVoteCastForm">
+                                                <div class="modal-body">
+                                                    <div class="form-group row">
+                                                        <label for="inputBallotNo" class="col-sm-4 col-form-label">Enter Ballot No.</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" name="ballot_no" class="form-control" id="inputBallotNo" placeholder="Ballot No.">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="inputVoterId" class="col-sm-4 col-form-label">Enter Voter ID</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" name="voter_id" class="form-control" id="inputVoterId" placeholder="Voter ID">
+                                                        </div>
+                                                    </div>
+                                                    <p style="color: red; text-align: center; display: none" id="singleVoteCastErrMsg">* Ballot No. field or Voter ID field cannot be empty.</p>
+                                                </div>
+                                                <div class="modal-footer">
+
+                                                    <button type="button" class="btn btn-secondary"
+                                                            data-dismiss="modal">Close</button>
+                                                    <button type="button" id="resetSingleVoteCastBtn" name="button" class="btn btn-primary">Reset</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link" id="resetAllCastedVoteBtn">
+                                    <div class="container sidebar-dark-primary">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Reset All Casted Vote</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link" id="candidateResetBtn">
+                                    <div class="container sidebar-dark-primary">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Reset Candidate</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link" id="resetPostBtn">
+                                    <div class="container sidebar-dark-primary">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Reset Post</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link" id="resetVoterBtn">
+                                    <div class="container sidebar-dark-primary">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Reset Voter</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link" id="deleteVoterBtn">
+                                    <div class="container sidebar-dark-primary">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Delete Voter</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link" id="resetElectionBtn">
+                                    <div class="container sidebar-dark-primary">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Reset Election</p>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
             </li>
         </ul>
@@ -550,3 +628,5 @@
     </div>
     <!-- /.sidebar -->
 </aside>
+
+<script src="/evoting/js/reset-data.js"></script>

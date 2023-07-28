@@ -15,14 +15,13 @@ if (isset($_POST['voterdisplay'])) {
   </thead>';
     $sql = "select * from `voterinfo`";
     $result = mysqli_query($conn, $sql);
-    $number = 1;
     while ($row = mysqli_fetch_assoc($result)) {
         $id = $row['voterid'];
         $voteremail = $row['email'];
         $votername = $row['votername'];
         $voterbatch = $row['batch'];
         $table .= '<tr>
-      <td scope="row">' . $number . '</td>
+      <td scope="row">' . $row['serial'] . '</td>
       <td>' . $votername . '</td>
       <td>' . $voteremail . '</td>
       <td>' . $voterbatch . '</td>
@@ -32,7 +31,6 @@ if (isset($_POST['voterdisplay'])) {
     <button class="btn btn-danger"onclick="deletevoter(' . $id . ')">Delete</button>
 </td>
     </tr>';
-        $number++;
     }
     $table .= '</table>';
     echo $table;

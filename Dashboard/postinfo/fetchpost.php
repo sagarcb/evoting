@@ -14,14 +14,13 @@ if (isset($_POST['displaySend'])) {
   </thead>';
     $sql = "select * from `postinfo`";
     $result = mysqli_query($conn, $sql);
-    $number = 1;
     while ($row = mysqli_fetch_assoc($result)) {
         $id = $row['postid'];
         $postnum = $row['numberofseat'];
         $posttype = $row['posttype'];
         $postdesc = $row['postdescription'];
         $table .= '<tr>
-      <td scope="row">' . $number . '</td>
+      <td scope="row">' . $row['serial'] . '</td>
       <td>' . $postnum . '</td>
       <td>' . $posttype . '</td>
       <td>' . $postdesc . '</td>
@@ -30,7 +29,6 @@ if (isset($_POST['displaySend'])) {
     <button class="btn btn-danger"onclick="DeleteUser(' . $id . ')">Delete</button>
 </td>
     </tr>';
-        $number++;
     }
     $table .= '</table>';
     echo $table;

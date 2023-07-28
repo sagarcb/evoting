@@ -8,7 +8,7 @@ if (isset($_POST['nameSend']) && isset($_POST['emailSend']) && isset($_POST['bat
 
 
 
-        $sql = "insert into `candidateinfo`(candidateid,candidatename,candidatemail,batch,posttype) values('$candidateid','$nameSend','$emailSend','$batchSend','$posttSend')";
+        $sql = "insert into `candidateinfo`(candidatename,candidatemail,batch,posttype) values('$nameSend','$emailSend','$batchSend','$posttSend')";
 
 
         $res = mysqli_query($conn, $sql);

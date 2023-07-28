@@ -14,14 +14,13 @@ $table = '<table class="table">
   </thead>';
 $sql = "select * from `candidateinfo`";
 $result = mysqli_query($conn, $sql);
-$number = 1;
 while ($row = mysqli_fetch_assoc($result)) {
     $id = $row['candidateid'];
     $candidateemail = $row['candidatemail'];
     $candidatename = $row['candidatename'];
     $candidatebatch = $row['batch'];
     $table .= '<tr>
-      <td scope="row">' . $number . '</td>
+      <td scope="row">' . $row['serial'] . '</td>
       <td>' . $candidatename . '</td>
       <td>' . $candidateemail . '</td>
       <td>' . $candidatebatch . '</td>
@@ -30,7 +29,6 @@ while ($row = mysqli_fetch_assoc($result)) {
     <button class="btn btn-danger" id="deleteCandidateBtn" data-id="'.$id.'">Delete</button>
 </td>
     </tr>';
-    $number++;
 }
 $table .= '</table>';
 echo $table;

@@ -28,6 +28,12 @@
     <!-- summernote -->
     <link rel="stylesheet" href="../plugins/summernote/summernote-bs4.min.css">
 
+    <style>
+        .container {
+            max-width: 100% !important;
+        }
+    </style>
+
 
 </head>
 
@@ -39,11 +45,6 @@
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-        <style>
-            .content-wrapper {
-                background-color: white !important;
-            }
-        </style>
 
         <div class="container">
             <div id="displayVoter">

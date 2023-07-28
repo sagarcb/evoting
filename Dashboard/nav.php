@@ -13,32 +13,14 @@
             <li class="nav-item">
                 <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
             </li>
-            <li class="nav-item d-none d-sm-inline-block">
-                <a href="index3.html" class="nav-link">Home</a>
-            </li>
-            <li class="nav-item d-none d-sm-inline-block">
-                <a href="#" class="nav-link">Contact</a>
-            </li>
+<!--            <li class="nav-item d-none d-sm-inline-block">-->
+<!--                <a href="index3.html" class="nav-link">Home</a>-->
+<!--            </li>-->
+<!--            <li class="nav-item d-none d-sm-inline-block">-->
+<!--                <a href="#" class="nav-link">Contact</a>-->
+<!--            </li>-->
 
         </ul>
-        <ul>
-
-<!--            <a class="nav-item" href="../php/logout.php?logout_id=--><?php //error_reporting(0); echo $unique_id; ?><!--">-->
-<!--                <button>LogOut</button>-->
-<!--            </a>-->
-
-        </ul>
-
-        <style>
-            .logout_btn {
-                position: absolute;
-                margin-left: 650px;
-                top: 10px;
-            }
-        </style>
-
-
-
 
         <!-- Right navbar links -->
         <ul class="navbar-nav ml-auto">
@@ -65,15 +47,9 @@
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="../php/logout.php?logout_id=<?php error_reporting(0); echo $unique_id; ?>" role="button">
+                <a class="nav-link" href="/evoting/php/logout.php?logout_id=<?php error_reporting(0); echo $unique_id; ?>" role="button">
                     Logout
                 </a>
             </li>
             <!-- Messages Dropdown Menu -->
-
-
-
-
-
-
     </nav>

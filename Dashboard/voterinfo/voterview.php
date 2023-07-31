@@ -13,7 +13,7 @@ if (isset($_POST['voterdisplay'])) {
         
     </tr>
   </thead>';
-    $sql = "select * from `voterinfo`";
+    $sql = "select * from `voterinfo` ORDER BY serial ASC;";
     $result = mysqli_query($conn, $sql);
     while ($row = mysqli_fetch_assoc($result)) {
         $id = $row['voterid'];

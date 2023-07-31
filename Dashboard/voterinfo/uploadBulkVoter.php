@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Process the data
         foreach ($data as $key => $row) {
-            $voterid = $key + 1;
+            $voterid = time() + $key;
             $voterName = trim($row[0]);
             $email = trim($row[1]);
             $batch = trim($row[2]);
@@ -40,7 +40,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $checkUserExistByEmail = checkUserAlreadyExist($conn, true, $email, false);
                 $checkUserExistByStudentId = checkUserAlreadyExist($conn, false, null, true, $student_id);
 
-                if ($checkUserExistByStudentId || $checkUserExistByEmail) {
+                if ($checkUserExistByEmail) {
+                    $data['voterName'] = $voterName;
+                    $data['email'] = $email;
+                    $data['batch'] = $batch;
+                    $data['password'] = $password;
+                    $data['student_id'] = $student_id;
+                    updateExistUserData($conn, $data);
+                    continue;
+                }else if ($checkUserExistByStudentId) {
                     continue;
                 }
 
@@ -85,4 +93,17 @@ function checkUserAlreadyExist($conn, $checkByEmail = false, $email = null, $che
     }
 
     return true;
+}
+
+function updateExistUserData($conn, $data) {
+    $password = $data['password'];
+    $email = $data['email'];
+    $votername = $data['voterName'];
+    $batch = $data['batch'];
+    $student_id = $data['student_id'];
+    $query = "UPDATE `voterinfo` SET password='$password', votername='$votername', batch='$batch', student_id='$student_id' WHERE email='$email'";
+    if (mysqli_query($conn, $query)) {
+        return true;
+    }
+    return false;
 }

@@ -13,7 +13,7 @@ $ciphering = "AES-128-CTR";
 $iv_length = openssl_cipher_iv_length($ciphering);
 $options = 0;
 $encryption_iv = '1234567891011121';
-$encryption_key = '323232323fjaksdfjalsdf';
+$encryption_key = '4750d4975e73c470699164fd39a732facfe1b5bd79473866a15ea1b4963cd17b';
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

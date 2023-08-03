@@ -53,6 +53,10 @@ $(document).ready(function () {
     $('#updateCandidateForm').on('submit', function (e) {
         e.preventDefault();
         updateCandidateInfo()
+    });
+
+    $('#topAddCandidateButton').on('click', function () {
+        $('#addCandidateForm').trigger('reset');
     })
 
     function addCandidate() {
@@ -63,16 +67,19 @@ $(document).ready(function () {
         var email = $('#email').val();
         var batch = $('#batch').val();
         var post = $('#post').val();
+        var formData = new FormData();
+        formData.append("image", $("#candidateImage")[0].files[0]);
+        formData.append("nameSend", name);
+        formData.append("emailSend", email);
+        formData.append("posttSend", post);
+        formData.append("candidateAdd", true);
+        formData.append("batchSend", batch);
         $.ajax({
             url: "candidate_backend.php",
             type: 'post',
-            data: {
-                nameSend: name,
-                emailSend: email,
-                batchSend: batch,
-                posttSend: post,
-                candidateAdd: true
-            },
+            data: formData,
+            contentType: false,
+            processData: false,
             success: function (response) {
                 console.log(response);
                 let res = JSON.parse(response);
@@ -153,17 +160,25 @@ $(document).ready(function () {
             batch         : $('#updateCandidateForm input[name=candidateBatch]').val(),
             postid        : $('#updateCandidateForm select[name=candidatePosts]').val()
         }
+
+        let formData = new FormData();
+        formData.append('updateCandidate', true)
+        formData.append('candidateId', candidateId)
+        formData.append('candidatename', data.candidatename)
+        formData.append('candidatemail', data.candidatemail)
+        formData.append('batch', data.batch)
+        formData.append('postid', data.postid)
+        formData.append('image', $("#updateCandidateImage")[0].files[0])
+
         console.log(data);
         $(errorMsgContainer).text('');
         $(errorMsgContainer).hide();
         $.ajax({
             type: 'post',
             url: 'candidate_backend.php',
-            data: {
-                updateCandidate: true,
-                candidateId: candidateId,
-                data
-            },
+            data: formData,
+            contentType: false,
+            processData: false,
             success: function (res) {
                 let response = JSON.parse(res);
                 console.log(response);

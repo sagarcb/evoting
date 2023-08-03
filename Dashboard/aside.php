@@ -1,3 +1,15 @@
+<?php
+$refreshSvgIcon = '<svg fill="#fcfcfc" height="18px" width="18px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 489.698 489.698" xml:space="preserve" stroke="#fcfcfc"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="M468.999,227.774c-11.4,0-20.8,8.3-20.8,19.8c-1,74.9-44.2,142.6-110.3,178.9c-99.6,54.7-216,5.6-260.6-61l62.9,13.1 c10.4,2.1,21.8-4.2,23.9-15.6c2.1-10.4-4.2-21.8-15.6-23.9l-123.7-26c-7.2-1.7-26.1,3.5-23.9,22.9l15.6,124.8 c1,10.4,9.4,17.7,19.8,17.7c15.5,0,21.8-11.4,20.8-22.9l-7.3-60.9c101.1,121.3,229.4,104.4,306.8,69.3 c80.1-42.7,131.1-124.8,132.1-215.4C488.799,237.174,480.399,227.774,468.999,227.774z"></path> <path d="M20.599,261.874c11.4,0,20.8-8.3,20.8-19.8c1-74.9,44.2-142.6,110.3-178.9c99.6-54.7,216-5.6,260.6,61l-62.9-13.1 c-10.4-2.1-21.8,4.2-23.9,15.6c-2.1,10.4,4.2,21.8,15.6,23.9l123.8,26c7.2,1.7,26.1-3.5,23.9-22.9l-15.6-124.8 c-1-10.4-9.4-17.7-19.8-17.7c-15.5,0-21.8,11.4-20.8,22.9l7.2,60.9c-101.1-121.2-229.4-104.4-306.8-69.2 c-80.1,42.6-131.1,124.8-132.2,215.3C0.799,252.574,9.199,261.874,20.599,261.874z"></path> </g> </g> </g></svg>';
+$parentRefreshIcon = '<svg fill="#ffffff" height="18px" width="18px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 471.612 471.612" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M68.987,402.624c91.98,91.983,241.652,91.983,333.636,0c91.983-91.977,91.983-241.658,0-333.639s-241.655-91.98-333.636,0 S-22.993,310.642,68.987,402.624z M87.29,87.276c81.899-81.896,215.152-81.896,297.052,0c81.882,81.894,81.882,215.154,0,297.055 c-81.899,81.887-215.164,81.887-297.052,0C5.394,302.431,5.394,169.17,87.29,87.276z M185.415,97.301 c8.94-2.004,19.302-3.07,29.991-3.07c23.353,0,77.224,5.594,114.415,52.452l0.124-0.127l24.116-55.618 c0.815-1.865,2.767-2.958,4.776-2.674c1.004,0.139,1.891,0.611,2.576,1.282c0.687,0.686,1.142,1.599,1.277,2.616l18.11,138.54 c0.172,1.383-0.283,2.79-1.288,3.783c-0.987,0.984-2.4,1.463-3.783,1.289l-138.543-18.116c-2.018-0.254-3.605-1.839-3.889-3.848 c-0.284-2.016,0.812-3.96,2.675-4.782l55.623-24.116l4.965-4.962c-23.838-33.683-59.911-39.094-80.336-39.094 c-12.105,0-20.398,1.791-20.75,1.865c-1.132,0.249-2.264-0.461-2.506-1.605l-9.177-41.283 C183.553,98.687,184.271,97.555,185.415,97.301z M289.905,374.312c-8.938,2.004-19.299,3.068-29.991,3.068 c-23.354,0-77.221-5.592-114.409-52.452l-0.127,0.13l-24.113,55.614c-0.819,1.868-2.766,2.961-4.776,2.678 c-1.005-0.142-1.895-0.615-2.58-1.282c-0.683-0.687-1.144-1.603-1.277-2.619L94.525,240.912c-0.177-1.384,0.284-2.79,1.289-3.783 c0.987-0.987,2.396-1.466,3.783-1.292l138.531,18.125c2.021,0.254,3.605,1.838,3.89,3.848c0.289,2.016-0.811,3.96-2.672,4.782 l-55.624,24.115l-4.962,4.959c23.835,33.686,59.906,39.094,80.333,39.094c12.104,0,20.397-1.79,20.746-1.861 c1.135-0.248,2.264,0.461,2.507,1.602l9.179,41.287C291.767,372.929,291.046,374.058,289.905,374.312z"></path> </g> </g></svg>';
+?>
+
+<style>
+#reset-links {
+    height: 200px;
+    overflow: auto;
+}
+</style>
+
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="/evoting/Dashboard/dashboard.php" class="brand-link">
@@ -517,9 +529,9 @@
 <!--                            </p>-->
 <!--                        </a>-->
 <!--                    </li>-->
-                    <li class="nav-item">
+                    <li class="nav-item" id="reset-links">
                         <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-circle"></i>
+                            <?=$parentRefreshIcon?>
                             <p>
                                 Reset Data
                                 <i class="fas fa-angle-left right"></i>
@@ -529,7 +541,7 @@
                             <li class="nav-item">
                                 <a href="#" class="nav-link" data-target="#singleVoteCastModal" data-toggle="modal">
                                     <div class="container sidebar-dark-primary">
-                                        <i class="far fa-circle nav-icon"></i>
+                                        <?=$refreshSvgIcon?>
                                         <p>Reset Single Vote Cast</p>
                                     </div>
                                 </a>
@@ -574,7 +586,7 @@
                             <li class="nav-item">
                                 <a href="#" class="nav-link" id="resetAllCastedVoteBtn">
                                     <div class="container sidebar-dark-primary">
-                                        <i class="far fa-circle nav-icon"></i>
+                                        <?=$refreshSvgIcon?>
                                         <p>Reset All Casted Vote</p>
                                     </div>
                                 </a>
@@ -582,7 +594,7 @@
                             <li class="nav-item">
                                 <a href="#" class="nav-link" id="candidateResetBtn">
                                     <div class="container sidebar-dark-primary">
-                                        <i class="far fa-circle nav-icon"></i>
+                                        <?=$refreshSvgIcon?>
                                         <p>Reset Candidate</p>
                                     </div>
                                 </a>
@@ -590,7 +602,7 @@
                             <li class="nav-item">
                                 <a href="#" class="nav-link" id="resetPostBtn">
                                     <div class="container sidebar-dark-primary">
-                                        <i class="far fa-circle nav-icon"></i>
+                                        <?=$refreshSvgIcon?>
                                         <p>Reset Post</p>
                                     </div>
                                 </a>
@@ -598,7 +610,7 @@
                             <li class="nav-item">
                                 <a href="#" class="nav-link" id="resetVoterBtn">
                                     <div class="container sidebar-dark-primary">
-                                        <i class="far fa-circle nav-icon"></i>
+                                        <?=$refreshSvgIcon?>
                                         <p>Reset Voter</p>
                                     </div>
                                 </a>
@@ -606,7 +618,7 @@
                             <li class="nav-item">
                                 <a href="#" class="nav-link" id="deleteVoterBtn">
                                     <div class="container sidebar-dark-primary">
-                                        <i class="far fa-circle nav-icon"></i>
+                                        <?=$refreshSvgIcon?>
                                         <p>Delete Voter</p>
                                     </div>
                                 </a>
@@ -614,13 +626,14 @@
                             <li class="nav-item">
                                 <a href="#" class="nav-link" id="resetElectionBtn">
                                     <div class="container sidebar-dark-primary">
-                                        <i class="far fa-circle nav-icon"></i>
+                                        <?=$refreshSvgIcon?>
                                         <p>Reset Election</p>
                                     </div>
                                 </a>
                             </li>
                         </ul>
                     </li>
+                </ul>
             </li>
         </ul>
     </nav>

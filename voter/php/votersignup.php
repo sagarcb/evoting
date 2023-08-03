@@ -34,8 +34,8 @@ if (!empty($email) && !empty($password) && !empty($cpassword) && !empty($name) &
                 $otp = mt_rand(111111, 999999);
                 $last_id = rand(time(), 10000000);
                 // let's start insert data into table
-                $password = password_hash($password, PASSWORD_BCRYPT);
-
+//                $password = password_hash($password, PASSWORD_BCRYPT);
+                $password = passwordEncrypt($password);
 
                 $sql2 = mysqli_query($conn, "INSERT INTO voterinfo(voterid,email, password,otp,email_verification_status,votername,batch,loginstatus,votecaststatus)
                     VALUES ({$last_id},'{$email}','{$password}','{$otp}','{$email_verification_status}','{$name}','{$batch}','{$loginstatus}','{$votecaststatus}')");
@@ -106,4 +106,11 @@ if (!empty($email) && !empty($password) && !empty($cpassword) && !empty($name) &
     }
 }
 
-?>
+function passwordEncrypt($password) {
+    $ciphering = "AES-128-CTR";
+    $options = 0;
+    $encryption_iv = '1234567891011121';
+    $encryption_key = '4750d4975e73c470699164fd39a732facfe1b5bd79473866a15ea1b4963cd17b';
+
+    return openssl_encrypt(trim($password), $ciphering, $encryption_key, $options, $encryption_iv);
+}

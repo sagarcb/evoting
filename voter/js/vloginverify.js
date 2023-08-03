@@ -9,7 +9,7 @@ submitbtn.onclick = () => {
   // start ajax
 
   let xhr = new XMLHttpRequest(); //create xml object
-  xhr.open("POST", "./php/voterloginotp.php", true);
+  xhr.open("POST", "./php/voterloginotpverification.php", true);
   xhr.onload = () => {
     if (xhr.readyState == XMLHttpRequest.DONE) {
       if (xhr.status == 200) {

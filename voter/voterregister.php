@@ -66,7 +66,7 @@
                         <!-- <div class="loader"></div> -->
                     </div>
                     <div class="group" style="margin-top:10px">
-                        <span><a href="forgot.php">Forgot-Password</a></span>
+<!--                        <span><a href="forgot.php">Forgot-Password</a></span>-->
                         <span><a href="index.php">Login</a></span>
                     </div>
                 </form>

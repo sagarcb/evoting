@@ -44,7 +44,6 @@
                         <input type="submit" id="yes" name="button" class="button" value="Login Now">
                     </div>
                     <div class="group">
-                        <span><a href="forgot.php">Forgot-Password</a></span>
                         <span><a href="voterregister.php">Signup</a></span>
                     </div>
                 </form>

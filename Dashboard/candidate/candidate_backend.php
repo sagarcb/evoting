@@ -18,9 +18,13 @@ if (isset($_POST['candidateAdd']) && $_POST['candidateAdd']) {
             echo json_encode($response);
             exit();
         }
-        $candidateid = rand(10000,99999);
+        $candidateid = time();
+        $imageName = '';
+        if ($_FILES) {
+            $imageName = uploadImage($_FILES);
+        }
 
-        $sql = "insert into `candidateinfo`(candidateid,candidatename,candidatemail,batch,postid) values('$candidateid','$nameSend','$emailSend','$batchSend','$posttSend')";
+        $sql = "insert into `candidateinfo`(candidateid,candidatename,candidatemail,batch,postid,candidateimage) values('$candidateid','$nameSend','$emailSend','$batchSend','$posttSend','$imageName')";
         $res = mysqli_query($conn, $sql);
         if ($res) {
             $response = [
@@ -50,6 +54,7 @@ if (isset($_POST['candidateAdd']) && $_POST['candidateAdd']) {
 
 if (isset($_POST['deleteCandidate']) && isset($_POST['candidateId'])) {
     $candidateid = $_POST['candidateId'];
+    removeOldCandidateImage($candidateid, $conn);
     $sql = "DELETE FROM `candidateinfo` WHERE candidateid = '$candidateid'";
     $res = mysqli_query($conn, $sql);
     if ($res) echo true;
@@ -80,17 +85,33 @@ if (isset($_POST['getCandidateInfo']) && isset($_POST['candidateId'])) {
 
 if (isset($_POST['updateCandidate'])) {
     if (isset($_POST['candidateId'])) {
-        $candidateName = $_POST['data']['candidatename'];
-        $candidateEmail = $_POST['data']['candidatemail'];
-        $candidateBatch = $_POST['data']['batch'];
-        $postid = $_POST['data']['postid'];
+        $candidateName = $_POST['candidatename'];
+        $candidateEmail = $_POST['candidatemail'];
+        $candidateBatch = $_POST['batch'];
+        $postid = $_POST['postid'];
         $candidateId = $_POST['candidateId'];
-        $sql = "UPDATE `candidateinfo`
+        $imageName = null;
+        if ($_FILES) {
+            removeOldCandidateImage($candidateId, $conn);
+            $imageName = uploadImage($_FILES);
+        }
+
+        if ($imageName) {
+            $sql = "UPDATE `candidateinfo`
+                SET candidatename = '$candidateName',
+                candidatemail = '$candidateEmail',
+                batch = '$candidateBatch',
+                postid = '$postid',
+                candidateimage = '$imageName'
+            WHERE candidateid = '$candidateId';";
+        }else {
+            $sql = "UPDATE `candidateinfo`
                 SET candidatename = '$candidateName',
                 candidatemail = '$candidateEmail',
                 batch = '$candidateBatch',
                 postid = '$postid'
             WHERE candidateid = '$candidateId';";
+        }
         $result = mysqli_query($conn, $sql);
         if ($result) {
             $response = [
@@ -111,4 +132,20 @@ if (isset($_POST['updateCandidate'])) {
     echo json_encode($response);
     exit();
 
+}
+
+function uploadImage($image) {
+    $fileName = time().'_'.$image["image"]["name"];
+    $targetDir = "./candidate_images/";
+    $targetFile = $targetDir . $fileName;
+    move_uploaded_file($image["image"]["tmp_name"], $targetFile);
+    return $fileName;
+}
+
+function removeOldCandidateImage($id, $conn) {
+    $query = "SELECT * FROM `candidateinfo` where candidateid = '$id'";
+    $result = mysqli_query($conn, $query);
+    $data = mysqli_fetch_assoc($result);
+    $imageName = $data['candidateimage'];
+    unlink('./candidate_images/'.$imageName);
 }

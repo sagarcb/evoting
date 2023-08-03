@@ -29,6 +29,20 @@ function showTwoWordPostDescription($desc) {
         margin-top: 10px;
         margin-bottom: 5px;
     }
+    .image-container {
+        width: 60px;
+        height: 60px;
+        overflow: hidden;
+        border-radius: 50%; /* Make it a circle */
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Add a subtle shadow */
+    }
+
+    /* Style for the image */
+    .image-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Make the image cover the container */
+    }
 </style>
 <div class="wrapper">
 
@@ -49,7 +63,7 @@ function showTwoWordPostDescription($desc) {
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <div class="header-btn-section">
-        <button class="btn btn-primary" data-toggle="modal" data-target="#addCandidateModal">Add Candidate</button>
+        <button class="btn btn-primary" data-toggle="modal" data-target="#addCandidateModal" id="topAddCandidateButton">Add Candidate</button>
     </div>
 
 
@@ -72,7 +86,7 @@ function showTwoWordPostDescription($desc) {
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="" id="addCandidateForm">
+            <form action="" id="addCandidateForm" enctype="multipart/form-data">
                 <div class="modal-body">
                     <div class="alert alert-danger errorMsgContainer" role="alert" style="display: none">
                     </div>
@@ -90,6 +104,10 @@ function showTwoWordPostDescription($desc) {
                         <label for="batch">Candidate Batch</label>
                         <input type="text" class="form-control" id="batch"
                                placeholder="Enter Batch" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="candidateImage">Candidate Image</label>
+                        <input type="file" class="form-control" id="candidateImage">
                     </div>
                     <div class="form-group">
                         <label for="post">Posts</label>
@@ -141,6 +159,10 @@ function showTwoWordPostDescription($desc) {
                     <div class="form-group">
                         <label for="batch">Candidate Batch</label>
                         <input type="text" class="form-control" name="candidateBatch" placeholder="Enter Batch" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="updateCandidateImage">Candidate Image</label>
+                        <input type="file" name="image" class="form-control" id="updateCandidateImage">
                     </div>
                     <div class="form-group">
                         <label for="post">Posts</label>

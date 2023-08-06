@@ -23,8 +23,9 @@ if (isset($_POST['hiddendata'])){
     $num=$_POST['updatenum'];
     $post=$_POST['updatepost'];
     $des=$_POST['updatedesc'];
+    $multiple_person=$_POST['multiple_person'];
 
-    $sql="update `postinfo` set numberofseat='$num',posttype='$post',postdescription='$des' where postid=$unique_id";
+    $sql="update `postinfo` set numberofseat='$num',posttype='$post',postdescription='$des',multiple_person='$multiple_person' where postid=$unique_id";
     $result=mysqli_query($conn,$sql);
 
 }

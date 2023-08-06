@@ -15,7 +15,7 @@
         aria-hidden="true">
 
         <div class="modal-dialog" role="document">
-          <div class="modal-content">
+          <div class="modal-content" style="height: 620px">
             <div class="modal-header">
               <h5 class="modal-title" id="exampleModalLabel">Update Post</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -25,29 +25,33 @@
             <div class="modal-body">
 
               <div class="form-group">
-                <label for="number">Post Seat Number</label>
-                <input type="text" class="form-control" id="updatenum" placeholder="Enter Post Number">
+                  <label for="updatenum">Post Seat Number</label>
+                  <select class="form-control" id="updatenum">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                      <option value="11">11</option>
+                      <option value="12">12</option>
+                      <option value="13">13</option>
+                      <option value="14">14</option>
+                      <option value="15">15</option>
+                  </select>
               </div>
               <div class="form-group">
-                <label for="posttype">Post Type</label>
-
-                <select name="post" type="text" id="updatepost" class="form-control">
-                  <option value="0">0</option>
-                  <option value="1">51</option>
-                  <option value="2">52</option>
-                  <option value="3">53</option>
-                  <option value="4">54</option>
-                  <option value="4">55</option>
-                  <option value="4">56</option>
-                  <option value="4">57</option>
-                  <option value="4">58</option>
-                  <option value="4">59</option>
-                  <option value="4">60</option>
-                  <option value="4">61</option>
-                  <option value="4">62</option>
-                </select>
-
+                  <label for="updatepost">Post Type</label>
+                  <input type="number" name="posttype" id="updatepost" class="form-control">
               </div>
+                <div class="form-group">
+                    <label for="update_multiple_person">Number of Select Person</label>
+                    <input type="number" name="multiple_person" id="update_multiple_person" class="form-control" value="0">
+                </div>
               <div class="form-group">
                 <label for="desc">Post Description</label>
                 <textarea name="desc" form="" type="text" class="form-control" id="updatedesc"
@@ -107,25 +111,25 @@
             }
           });
         }
-        function adduser() {
-          var num = $('#number').val();
-          var post = $('#posttype').val();
-          var desc = $('#desc').val();
-          $.ajax({
-            url: "add.php",
-            type: 'post',
-            data: {
-              numSend: num,
-              postSend: post,
-              descSend: desc,
-            },
-            success: function (data, status) {
-              $('#completeModal').modal('hide');
-              displayData();
-            }
-          });
-
-        };
+        // function adduser() {
+        //   var num = $('#number').val();
+        //   var post = $('#posttype').val();
+        //   var desc = $('#desc').val();
+        //   $.ajax({
+        //     url: "add.php",
+        //     type: 'post',
+        //     data: {
+        //       numSend: num,
+        //       postSend: post,
+        //       descSend: desc,
+        //     },
+        //     success: function (data, status) {
+        //       $('#completeModal').modal('hide');
+        //       displayData();
+        //     }
+        //   });
+        //
+        // };
         //delete//
         function DeleteUser(deleteid) {
           $.ajax({
@@ -145,9 +149,11 @@
           $('#hiddendata').val(updateid);
           $.post("updatepost.php", { updateid: updateid }, function (data, status) {
             var userid = JSON.parse(data);
+            console.log(userid);
             $('#updatenum').val(userid.numberofseat);
             $('#updatepost').val(userid.posttype);
             $('#updatedesc').val(userid.postdescription);
+            $('#update_multiple_person').val(userid.multiple_person)
             // console.log(status);
           });
 
@@ -160,13 +166,14 @@
           var updatepost = $('#updatepost').val();
           var updatedesc = $('#updatedesc').val();
           var hiddendata = $('#hiddendata').val();
+          var multiple_person = $('#update_multiple_person').val();
 
           $.post("updatepost.php", {
             updatenum: updatenum,
             updatepost: updatepost,
             updatedesc: updatedesc,
-            hiddendata: hiddendata
-
+            hiddendata: hiddendata,
+            multiple_person: multiple_person
           }, function (data, status) {
             $('#updateModal').modal('hide');
             displayData();

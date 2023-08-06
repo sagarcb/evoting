@@ -367,7 +367,7 @@ $parentRefreshIcon = '<svg fill="#ffffff" height="18px" width="18px" version="1.
                                     aria-labelledby="exampleModalLabel" aria-hidden="true">
 
                                     <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
+                                        <div class="modal-content" style="height: 620px">
                                             <div class="modal-header">
                                                 <h5 class="modal-title" id="exampleModalLabel">Add Post</h5>
                                                 <button type="button" class="close" data-dismiss="modal"
@@ -402,6 +402,10 @@ $parentRefreshIcon = '<svg fill="#ffffff" height="18px" width="18px" version="1.
                                                 <div class="form-group">
                                                     <label for="posttype">Post Type</label>
                                                     <input type="number" name="posttype" id="posttype" class="form-control">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="multiple_person">Number of Select Person</label>
+                                                    <input type="number" name="multiple_person" id="multiple_person" class="form-control" value="0">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="desc">Post Description</label>
@@ -470,6 +474,7 @@ $parentRefreshIcon = '<svg fill="#ffffff" height="18px" width="18px" version="1.
                                         var num = $('#number').val();
                                         var post = $('#posttype').val();
                                         var desc = $('#desc').val();
+                                        var multiple_person = $('#multiple_person').val();
                                         $.ajax({
                                             url: "/evoting/Dashboard/postinfo/add.php",
                                             type: 'post',
@@ -477,6 +482,7 @@ $parentRefreshIcon = '<svg fill="#ffffff" height="18px" width="18px" version="1.
                                                 numSend: num,
                                                 postSend: post,
                                                 descSend: desc,
+                                                multiple_person: multiple_person
                                             },
                                             success: function (data, status) {
                                                 $('#completeModal').modal('hide');

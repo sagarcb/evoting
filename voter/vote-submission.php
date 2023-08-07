@@ -12,7 +12,7 @@ if (!empty($_POST) && !empty($_POST['data'])) {
             break;
         }
         if ($total - 1 == $key) {
-            sendEmail($voter_id, $conn);
+            sendEmail($voter_id, $conn, $response['ballotNumber']);
         }
     }
 }else {
@@ -42,7 +42,8 @@ function singlePostVoteSubmission($data, $conn) {
                     $_SESSION['voter_success_msg'] = 'Your vote has been submitted successfully!';
                     $response = [
                         'status' => true,
-                        'msg' => 'Vote added successfully'
+                        'msg' => 'Vote added successfully',
+                        'ballotNumber' => $ballot_number
                     ];
                 }else {
                     $response = [
@@ -71,14 +72,15 @@ function singlePostVoteSubmission($data, $conn) {
     return $response;
 }
 
-function sendEmail($voterid, $conn) {
+function sendEmail($voterid, $conn, $ballotPaperNumber) {
     $query = "SELECT * FROM `voterinfo` WHERE voterid='$voterid'";
     $result = mysqli_query($conn, $query);
     $data = mysqli_fetch_assoc($result);
     if ($data) {
         $receiver = $data['email'];
         $subject = "Vote submission confirmation";
-        $body = "Hello " . $data['votername'] . ", \n Your vote has been submitted successfully!! \n Sincerely, \n SUB";
+        $body = "Hello " . $data['votername'] . ", \n Your vote has been submitted successfully!!
+         \n Ballot Paper Number: $ballotPaperNumber \nSincerely, \n SUB";
         $sender = "From: shonpollock0@gmail.com";
 
         if (mail($receiver, $subject, $body, $sender)) {

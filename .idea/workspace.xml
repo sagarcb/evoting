@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="08eca573-c027-4d27-8067-7310523b368a" name="Changes" comment="Voting submission completed">
+    <list default="true" id="08eca573-c027-4d27-8067-7310523b368a" name="Changes" comment="code updated">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/voter/js/voterregister.js" beforeDir="false" afterPath="$PROJECT_DIR$/voter/js/voterregister.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/voter/php/votersignup.php" beforeDir="false" afterPath="$PROJECT_DIR$/voter/php/votersignup.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/voter/vote-submission.php" beforeDir="false" afterPath="$PROJECT_DIR$/voter/vote-submission.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +107,7 @@
       <workItem from="1691065040117" duration="8303000" />
       <workItem from="1691319567701" duration="12400000" />
       <workItem from="1691375917816" duration="449000" />
-      <workItem from="1691387117145" duration="20045000" />
+      <workItem from="1691387117145" duration="21206000" />
     </task>
     <task id="LOCAL-00001" summary="code updated">
       <option name="closed" value="true" />
@@ -214,7 +213,15 @@
       <option name="project" value="LOCAL" />
       <updated>1691414941321</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="code updated">
+      <option name="closed" value="true" />
+      <created>1691416420505</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1691416420505</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -224,12 +231,12 @@
     <MESSAGE value="Reset functionalities completed" />
     <MESSAGE value="design updated" />
     <MESSAGE value="send mail updated" />
-    <MESSAGE value="code updated" />
     <MESSAGE value="code organized" />
     <MESSAGE value="candidate images and voter login issues solved" />
     <MESSAGE value="select person added in manage post" />
     <MESSAGE value="Voting submission completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Voting submission completed" />
+    <MESSAGE value="code updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="code updated" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -273,11 +280,6 @@
           <url>file://$PROJECT_DIR$/voter/vote-submission.php</url>
           <line>26</line>
           <option name="timeStamp" value="42" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/voter/vote-submission.php</url>
-          <line>5</line>
-          <option name="timeStamp" value="43" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

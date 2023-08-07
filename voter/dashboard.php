@@ -50,4 +50,7 @@
     </script>
 <?php } ?>
 
-<?php unset($_SESSION['voter_success_msg']); ?>
+<?php
+unset($_SESSION['voter_success_msg']);
+unset($_SESSION['change_password']);
+?>

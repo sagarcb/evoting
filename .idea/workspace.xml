@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="08eca573-c027-4d27-8067-7310523b368a" name="Changes" comment="code updated">
+    <list default="true" id="08eca573-c027-4d27-8067-7310523b368a" name="Changes" comment="ballot paper number added">
+      <change afterPath="$PROJECT_DIR$/voter/js/otpverification.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/voter/php/otpverification.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/voter/verify-change-password-otp.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/voter/vote-submission.php" beforeDir="false" afterPath="$PROJECT_DIR$/voter/vote-submission.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/voter/change-password.php" beforeDir="false" afterPath="$PROJECT_DIR$/voter/change-password.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/voter/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/voter/dashboard.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +111,7 @@
       <workItem from="1691065040117" duration="8303000" />
       <workItem from="1691319567701" duration="12400000" />
       <workItem from="1691375917816" duration="449000" />
-      <workItem from="1691387117145" duration="21206000" />
+      <workItem from="1691387117145" duration="24247000" />
     </task>
     <task id="LOCAL-00001" summary="code updated">
       <option name="closed" value="true" />
@@ -221,7 +225,15 @@
       <option name="project" value="LOCAL" />
       <updated>1691416420505</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="ballot paper number added">
+      <option name="closed" value="true" />
+      <created>1691417907832</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1691417907832</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,7 +248,8 @@
     <MESSAGE value="select person added in manage post" />
     <MESSAGE value="Voting submission completed" />
     <MESSAGE value="code updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="code updated" />
+    <MESSAGE value="ballot paper number added" />
+    <option name="LAST_COMMIT_MESSAGE" value="ballot paper number added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -280,6 +293,16 @@
           <url>file://$PROJECT_DIR$/voter/vote-submission.php</url>
           <line>26</line>
           <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/voter/verify-change-password-otp.php</url>
+          <line>6</line>
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/voter/verify-change-password-otp.php</url>
+          <line>1</line>
+          <option name="timeStamp" value="46" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

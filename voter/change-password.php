@@ -1,5 +1,8 @@
-<?php include_once "unauthenticated_redirection.php"?>
-<?php include_once "php/db.php"?>
+<?php
+session_start();
+include_once "unauthenticated_redirection.php";
+?>
+<?php include_once "php/db.php";?>
 <?php
     if (isset($_POST) && !empty($_POST)) {
         if (isset($_GET['voterid'])) {
@@ -32,24 +35,25 @@
 
             $verifyPassword = verifyPassword($oldPass, $data['password']);
             if ($verifyPassword) {
-                $newEncryptedPassword = passwordEncrypt($newPass);
-                $updatePassQuery = "UPDATE `voterinfo` SET password='$newEncryptedPassword' WHERE voterid='$voterid'";
-                $result = mysqli_query($conn, $updatePassQuery);
-                if ($result) {
-                    $_SESSION['voter_success_msg'] = 'Password Updated Successfully!';
+                $otp = rand(111111, 999999);
+                //$otp = 123456;
+                $_SESSION['change_password']['otp'] = $otp;
+                $_SESSION['change_password']['newpassword'] = $newPass;
+                $_SESSION['change_password']['voterid'] = $voterid;
+                $sendEmail = sendEmail($voterid, $conn, $otp);
+                if ($sendEmail) {
                     $response = [
-                        'status' => true,
-                        'msg' => 'Password Updated Successfully!'
+                        'status' => true
+                    ];
+                    echo json_encode($response);
+                    exit();
+                }else {
+                    $response = [
+                        'status' => true
                     ];
                     echo json_encode($response);
                     exit();
                 }
-                $response = [
-                    'status' => false,
-                    'msg' => 'Failed to update password!'
-                ];
-                echo json_encode($response);
-                exit();
             }
             $response = [
                 'status' => false,
@@ -80,6 +84,24 @@ function verifyPassword($inputPass, $dbPass) {
     $encryptInputPass = passwordEncrypt($inputPass);
     if ($encryptInputPass === $dbPass) {
         return true;
+    }
+    return false;
+}
+
+function sendEmail($voterid, $conn, $otp) {
+    $query = "SELECT * FROM `voterinfo` WHERE voterid='$voterid'";
+    $result = mysqli_query($conn, $query);
+    $data = mysqli_fetch_assoc($result);
+    if ($data) {
+        $receiver = $data['email'];
+        $subject = "OTP Verification";
+        $body = "Hello " . $data['votername'] . ", \n Your password change request OTP: $otp \nSincerely, \n SUB";
+        $sender = "From: shonpollock0@gmail.com";
+        if (mail($receiver, $subject, $body, $sender)) {
+            return true;
+        } else {
+            return false;
+        }
     }
     return false;
 }
@@ -176,7 +198,7 @@ function verifyPassword($inputPass, $dbPass) {
                 success: function (data) {
                     let resp = JSON.parse(data);
                     if (resp.status) {
-                        window.location.href = "dashboard.php";
+                        window.location.href = "./php/otpverification.php";
                     }else {
                         $(msgElement).text(resp.msg).css("color", "red");
                         $('#changePassForm').trigger('reset');

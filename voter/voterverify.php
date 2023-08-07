@@ -49,7 +49,7 @@
       </form>
 
     </div>
-    <script src="js/vloginverify.js?v=<?php echo time(); ?>"></script>
+    <script src="js/voterverify.js?v=<?php echo time(); ?>"></script>
     <script>
       const inputs = document.querySelectorAll("input"),
         button = document.querySelector("button");

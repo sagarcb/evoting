@@ -35,6 +35,7 @@ if (!empty($email) && !empty($password)) {
                     $_SESSION['id'] = $row['id'];
                     $_SESSION['email'] = $row['email'];
                     $_SESSION['otp'] = $row['otp'];
+                    $_SESSION['voterinfo'] = $row1;
                     //mail function
                     if ($otp) {
                         $receiver = $email;

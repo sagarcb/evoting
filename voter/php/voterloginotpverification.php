@@ -23,8 +23,9 @@ if (!empty($otp)) {
             if ($sql2) {
                 $row = mysqli_fetch_assoc($sql);
                 if ($row) {
-                    $_SESSION['voterid'] = $row['voterid'];
                     $_SESSION['email_verification_status'] = $row['email_verification_status'];
+                    $_SESSION['voterid'] = $_SESSION['voterinfo']['voterid'];
+                    $_SESSION['votername'] = $_SESSION['voterinfo']['votername'];
                     echo "success";
                 }
             }

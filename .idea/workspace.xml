@@ -4,18 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="08eca573-c027-4d27-8067-7310523b368a" name="Changes" comment="code updated">
-      <change beforePath="$PROJECT_DIR$/Dashboard/aside.php" beforeDir="false" afterPath="$PROJECT_DIR$/Dashboard/aside.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dashboard/voterinfo/Voterlist.php" beforeDir="false" afterPath="$PROJECT_DIR$/Dashboard/voterinfo/Voterlist.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dashboard/voterinfo/uploadBulkVoter.php" beforeDir="false" afterPath="$PROJECT_DIR$/Dashboard/voterinfo/uploadBulkVoter.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+    <list default="true" id="08eca573-c027-4d27-8067-7310523b368a" name="Changes" comment="select person added in manage post">
+      <change afterPath="$PROJECT_DIR$/voter/change-password.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/voter/dashboard.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/voter/footer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/voter/header.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/voter/navbar.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/voter/unauthenticated_redirection.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/voter/vote-submission.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/voter/voting-panel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dashboard/unauthenticated_redirection.php" beforeDir="false" afterPath="$PROJECT_DIR$/Dashboard/unauthenticated_redirection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/voter/js/vloginverify.js" beforeDir="false" afterPath="$PROJECT_DIR$/voter/js/vloginverify.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/voter/php/voterlogin.php" beforeDir="false" afterPath="$PROJECT_DIR$/voter/php/voterlogin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/voter/php/voterloginotpverification.php" beforeDir="false" afterPath="$PROJECT_DIR$/voter/php/voterloginotpverification.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/voter/php/voterlogout.php" beforeDir="false" afterPath="$PROJECT_DIR$/voter/php/voterlogout.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings">
+  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -25,9 +36,11 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="PhpDebugGeneral" hide_empty_superglobals="false" />
   <component name="PhpServers">
     <servers>
       <server host="evote.com" id="64b3d3ab-4250-4eb2-b6e6-c5077dc8ee5c" name="evote.com" />
+      <server host="localhost" id="33780f1f-18e3-48f3-9d49-5e800f3522fe" name="localhost" port="90" />
     </servers>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 8.1">
@@ -51,27 +64,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/xampp7.4/htdocs/evote/Dashboard/candidate",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "watcher.settings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/xampp8.1/htdocs/evoting/voter&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;watcher.settings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mongo&quot;,
+      &quot;mysql&quot;
+    ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp8.1\htdocs\evoting\voter" />
+      <recent name="C:\xampp8.1\htdocs\evoting\Dashboard\candidate\candidate_images" />
       <recent name="C:\xampp7.4\htdocs\evote\Dashboard\candidate" />
       <recent name="C:\xampp7.4\htdocs\evote\js" />
       <recent name="C:\xampp7.4\htdocs\evote\Dashboard\voterinfo" />
-      <recent name="C:\xampp7.4\htdocs\evote" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -87,6 +108,19 @@
       <workItem from="1689648028873" duration="1109000" />
       <workItem from="1689689406872" duration="1128000" />
       <workItem from="1689936960222" duration="24797000" />
+      <workItem from="1690479599783" duration="4543000" />
+      <workItem from="1690512368733" duration="11868000" />
+      <workItem from="1690553161358" duration="5908000" />
+      <workItem from="1690771104080" duration="48000" />
+      <workItem from="1690817325688" duration="2429000" />
+      <workItem from="1690821537332" duration="374000" />
+      <workItem from="1690859253321" duration="597000" />
+      <workItem from="1690946281632" duration="36000" />
+      <workItem from="1691030756100" duration="7187000" />
+      <workItem from="1691065040117" duration="8303000" />
+      <workItem from="1691319567701" duration="12400000" />
+      <workItem from="1691375917816" duration="449000" />
+      <workItem from="1691387117145" duration="18824000" />
     </task>
     <task id="LOCAL-00001" summary="code updated">
       <option name="closed" value="true" />
@@ -104,15 +138,101 @@
       <option name="project" value="LOCAL" />
       <updated>1689965666291</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Reset functionalities completed">
+      <option name="closed" value="true" />
+      <created>1690526777364</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1690526777364</updated>
+    </task>
+    <task id="LOCAL-00004" summary="design updated">
+      <option name="closed" value="true" />
+      <created>1690556153454</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1690556153454</updated>
+    </task>
+    <task id="LOCAL-00005" summary="send mail updated">
+      <option name="closed" value="true" />
+      <created>1690556833298</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1690556833298</updated>
+    </task>
+    <task id="LOCAL-00006" summary="code updated">
+      <option name="closed" value="true" />
+      <created>1690557300835</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1690557300835</updated>
+    </task>
+    <task id="LOCAL-00007" summary="code updated">
+      <option name="closed" value="true" />
+      <created>1690560151666</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1690560151666</updated>
+    </task>
+    <task id="LOCAL-00008" summary="code updated">
+      <option name="closed" value="true" />
+      <created>1690560315584</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1690560315584</updated>
+    </task>
+    <task id="LOCAL-00009" summary="code updated">
+      <option name="closed" value="true" />
+      <created>1690819124578</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1690819124578</updated>
+    </task>
+    <task id="LOCAL-00010" summary="code organized">
+      <option name="closed" value="true" />
+      <created>1691032165116</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1691032165116</updated>
+    </task>
+    <task id="LOCAL-00011" summary="candidate images and voter login issues solved">
+      <option name="closed" value="true" />
+      <created>1691082332590</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1691082332590</updated>
+    </task>
+    <task id="LOCAL-00012" summary="select person added in manage post">
+      <option name="closed" value="true" />
+      <created>1691323705222</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1691323705222</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="Reset functionalities completed" />
+    <MESSAGE value="design updated" />
+    <MESSAGE value="send mail updated" />
     <MESSAGE value="code updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="code updated" />
+    <MESSAGE value="code organized" />
+    <MESSAGE value="candidate images and voter login issues solved" />
+    <MESSAGE value="select person added in manage post" />
+    <option name="LAST_COMMIT_MESSAGE" value="select person added in manage post" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -123,34 +243,44 @@
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/Dashboard/candidate/candidate_backend.php</url>
-          <line>52</line>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/Dashboard/candidate/candidate_backend.php</url>
-          <line>72</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/Dashboard/voterinfo/updatevoter.php</url>
-          <line>11</line>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/Dashboard/voterinfo/voteradd.php</url>
           <line>11</line>
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/Dashboard/voterinfo/updatevoter.php</url>
-          <line>5</line>
-          <option name="timeStamp" value="19" />
+          <url>file://$PROJECT_DIR$/php/signup.php</url>
+          <line>4</line>
+          <option name="timeStamp" value="21" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/Dashboard/voterinfo/voterview.php</url>
+          <url>file://$PROJECT_DIR$/Dashboard/voterinfo/uploadBulkVoter.php</url>
+          <line>36</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/voter/php/voterloginotpverification.php</url>
           <line>14</line>
-          <option name="timeStamp" value="20" />
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/Dashboard/candidate/candidate_backend.php</url>
+          <line>87</line>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/Dashboard/postinfo/add.php</url>
+          <line>7</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/voter/vote-submission.php</url>
+          <line>26</line>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/voter/vote-submission.php</url>
+          <line>5</line>
+          <option name="timeStamp" value="43" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

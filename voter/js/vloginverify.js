@@ -15,7 +15,7 @@ submitbtn.onclick = () => {
       if (xhr.status == 200) {
         let data = xhr.response;
         if (data == "success") {
-          location.href = "./voterDashboard.php";
+          location.href = "./dashboard.php";
         } else {
           errortxt.textContent = data;
           errortxt.style.display = "block";

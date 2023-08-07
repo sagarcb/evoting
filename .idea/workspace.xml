@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="08eca573-c027-4d27-8067-7310523b368a" name="Changes" comment="change password otp verification added">
+    <list default="true" id="08eca573-c027-4d27-8067-7310523b368a" name="Changes" comment="shelve change">
+      <change afterPath="$PROJECT_DIR$/voter/img/club-logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/voter/img/vote-completed.gif" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/voter/vote-submission.php" beforeDir="false" afterPath="$PROJECT_DIR$/voter/vote-submission.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/voter/change-password.php" beforeDir="false" afterPath="$PROJECT_DIR$/voter/change-password.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/voter/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/voter/dashboard.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/voter/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/voter/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/voter/navbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/voter/navbar.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/voter/voting-panel.php" beforeDir="false" afterPath="$PROJECT_DIR$/voter/voting-panel.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,35 +57,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/xampp8.1/htdocs/evoting/voter&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;watcher.settings&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/xampp8.1/htdocs/evoting/voter/img",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "watcher.settings",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mongo&quot;,
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mongo",
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp8.1\htdocs\evoting\voter\img" />
       <recent name="C:\xampp8.1\htdocs\evoting\voter" />
       <recent name="C:\xampp8.1\htdocs\evoting\Dashboard\candidate\candidate_images" />
       <recent name="C:\xampp7.4\htdocs\evote\Dashboard\candidate" />
       <recent name="C:\xampp7.4\htdocs\evote\js" />
-      <recent name="C:\xampp7.4\htdocs\evote\Dashboard\voterinfo" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -108,7 +113,7 @@
       <workItem from="1691065040117" duration="8303000" />
       <workItem from="1691319567701" duration="12400000" />
       <workItem from="1691375917816" duration="449000" />
-      <workItem from="1691387117145" duration="25204000" />
+      <workItem from="1691387117145" duration="34058000" />
     </task>
     <task id="LOCAL-00001" summary="code updated">
       <option name="closed" value="true" />
@@ -238,7 +243,15 @@
       <option name="project" value="LOCAL" />
       <updated>1691424395832</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="code updated">
+      <option name="closed" value="true" />
+      <created>1691426759890</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1691426759891</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,10 +265,10 @@
     <MESSAGE value="candidate images and voter login issues solved" />
     <MESSAGE value="select person added in manage post" />
     <MESSAGE value="Voting submission completed" />
-    <MESSAGE value="code updated" />
     <MESSAGE value="ballot paper number added" />
     <MESSAGE value="change password otp verification added" />
-    <option name="LAST_COMMIT_MESSAGE" value="change password otp verification added" />
+    <MESSAGE value="code updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="code updated" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

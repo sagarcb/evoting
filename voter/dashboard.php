@@ -4,11 +4,26 @@
     <?php include 'navbar.php' ?>
     <style>
         .main-content {
-            border: 1px solid #eeebeb;
+            border: 1px solid #198754;
+            border-radius: 10px;
+        }
+        .main-content .heading {
+            background: #198754;
+            border-radius: 8px 8px 0 0;
+            height: 65px;
+            color: white;
+            padding-left: 1%;
+            padding-top: 1.3%;
+        }
+
+        .main-content .body {
             text-align: center;
-            background: #fffcf5;
-            padding-top: 5%;
-            padding-bottom: 10%;
+            margin-top: 2%;
+            margin-bottom: 3%;
+        }
+
+        .club-logo img {
+            width: 18%;
         }
 
         .link-container {
@@ -19,19 +34,33 @@
         }
 
         .link-container a button {
-            border: 1px solid grey;
+            background: #198754;
+            border-radius: 5px;
             cursor: pointer;
+            color: #FFFFFF;
+            border: none;
+            height: 50px;
+            width: 120%;
+            padding: 3%;
         }
     </style>
 
 
 
     <div class="main-content">
-        <h2>Welcome</h2>
-        <h2><?=$votername?></h2>
-        <div class="link-container d-flex justify-content-between">
-            <a href="voting-panel.php"><button>Open Voting Panel</button></a>
-            <a href="change-password.php"><button>Change Password</button></a>
+        <div class="heading">
+            <h3>SUB eVoting System</h3>
+        </div>
+        <div class="body">
+            <div class="club-logo">
+                <img src="img/club-logo.png" alt="">
+            </div>
+            <h2>Welcome To SUB eVoting System</h2>
+            <h2><?=$votername?></h2>
+            <div class="link-container d-flex justify-content-between">
+                <a href="voting-panel.php" style="margin-right: 5%"><button>Open Voting Panel-></button></a>
+                <a href="change-password.php"><button>Change Password-></button></a>
+            </div>
         </div>
     </div>
 </div>

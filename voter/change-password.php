@@ -113,29 +113,45 @@ function sendEmail($voterid, $conn, $otp) {
         <?php include 'navbar.php' ?>
         <style>
             .main-content {
-                border: 1px solid #eeebeb;
-                text-align: center;
-                background: #fffcf5;
-                padding-top: 5%;
-                padding-bottom: 10%;
+                border: 1px solid #198754;
+                border-radius: 10px;
             }
+            .main-content .heading {
+                background: #198754;
+                border-radius: 8px 8px 0 0;
+                height: 50px;
+                color: white;
+                padding-left: 1%;
+                padding-top: 0.7%;
+            }
+
 
             .change-pass-form {
                 width: 40%;
-                margin-top: 5%;
-                margin-left: auto;
-                margin-right: auto;
+                margin: 5% auto 10px;
             }
 
             .passwordErrorMsgDiv {
                 margin-left: 5%;
+            }
+
+            #changePassBtn {
+                background: #198754;
+                border-radius: 5px;
+                cursor: pointer;
+                color: #FFFFFF;
+                border: none;
+                height: 40px;
+                width: 40%;
             }
         </style>
 
 
 
         <div class="main-content">
-            <h3>Change Your Password:</h3>
+            <div class="heading">
+                <h3>Change Your Password:</h3>
+            </div>
             <div class="change-pass-form">
                 <form method="post" action="change-password.php" id="changePassForm">
                     <div class="form-group row">

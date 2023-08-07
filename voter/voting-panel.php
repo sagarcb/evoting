@@ -156,6 +156,14 @@ function checkVoterVoteCastStatus($voterid, $conn) {
                     <hr>
                 <?php }?>
             </ul>
+                <div class="row" style="margin-bottom: 10px">
+                    <div class="col-md-4" style="padding-right: 0; margin-right: 0; text-align: right; padding-top: 0.75%; font-weight: bold">
+                        Submit your login email:
+                    </div>
+                    <div class="col-md-8">
+                        <input type="email" class="form-control" id="loginEmail">
+                    </div>
+                </div>
                 <div class="ml-auto mr-auto text-center">
                     <button class="btn btn-primary"  id="submit-vote-btn">Submit Vote</button>
                 </div>
@@ -178,38 +186,46 @@ function checkVoterVoteCastStatus($voterid, $conn) {
     $(document).ready(function () {
         $('#submit-vote-btn').on('click', function () {
             var votedCheckedBoxes = $("input[type=checkbox]:checked");
+            var loginEmail = $('#loginEmail').val();
             let dataArray = [];
-            if (votedCheckedBoxes.length > 0) {
-                $(votedCheckedBoxes).each(function (index, element) {
-                    dataArray.push({
-                        candidateid: $(element).data('candidateid'),
-                        postid: $(element).data('postid'),
-                        voterid: <?=$voterid?>
+            if (loginEmail) {
+                if (votedCheckedBoxes.length > 0) {
+                    $(votedCheckedBoxes).each(function (index, element) {
+                        dataArray.push({
+                            candidateid: $(element).data('candidateid'),
+                            postid: $(element).data('postid'),
+                            voterid: <?=$voterid?>
+                        })
                     })
-                })
 
-                $.ajax({
-                    url: 'vote-submission.php',
-                    type: 'POST',
-                    data: {
-                        data: dataArray
-                    },
-                    success: function (data) {
-                        let resp = JSON.parse(data);
-                        if (resp.status) {
-                            window.location.href = "dashboard.php";
-                        }else {
-                            toastMessage(resp.msg);
+                    $.ajax({
+                        url: 'vote-submission.php',
+                        type: 'POST',
+                        data: {
+                            data: dataArray,
+                            loginemail: loginEmail,
+                            voter_id: <?=$voterid?>
+                        },
+                        success: function (data) {
+                            let resp = JSON.parse(data);
+                            if (resp.status) {
+                                window.location.href = "dashboard.php";
+                            }else {
+                                toastMessage(resp.msg);
+                            }
+                        },
+                        error: function (error) {
+                            console.log(error)
+                            toastMessage(error);
                         }
-                    },
-                    error: function (error) {
-                        console.log(error)
-                        toastMessage(error);
-                    }
-                })
+                    })
+                }else {
+                    toastMessage('No voting option is selected!')
+                }
             }else {
-                toastMessage('No voting option is selected!')
+                toastMessage('Please enter your login email!')
             }
+
 
         });
 
@@ -218,7 +234,7 @@ function checkVoterVoteCastStatus($voterid, $conn) {
                 text: msg,
                 duration: 3000,
                 gravity: "top",
-                position: "right",
+                position: "center",
                 close: true,
                 backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)", // Customize background color
                 stopOnFocus: true,

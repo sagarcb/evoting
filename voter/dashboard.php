@@ -42,7 +42,7 @@
             text: '<?=$_SESSION['voter_success_msg']?>',
             duration: 3000, // Display duration in milliseconds (3 seconds in this example)
             gravity: "top", // Toast position (top, bottom, center)
-            position: "right", // Toast position (left, center, right)
+            position: "center", // Toast position (left, center, right)
             close: true, // Show close button
             backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)", // Customize background color
             stopOnFocus: true, // Stop hiding the toast when the user focuses on it

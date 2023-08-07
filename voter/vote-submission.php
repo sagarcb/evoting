@@ -3,10 +3,20 @@ session_start();
 include_once "php/db.php";
 $response = [];
 if (!empty($_POST) && !empty($_POST['data'])) {
-    $voter_id = null;
+    $voter_id = $_POST['voter_id'];
+    $login_email = $_POST['loginemail'];
+    $checkLoginEmail = checkLoginEmail($login_email, $voter_id, $conn);
+    if (!$checkLoginEmail) {
+        $response = [
+            'status' => false,
+            'msg' => 'Your submitted email and Login email did not match! Please enter the correct email address.'
+        ];
+        echo json_encode($response);
+        die();
+    }
+
     $total = count($_POST['data']);
     foreach ($_POST['data'] as $key => $data) {
-        $voter_id = $_POST['data'][0]['voterid'];
         $response = singlePostVoteSubmission($data, $conn);
         if (!$response['status']) {
             break;
@@ -18,7 +28,7 @@ if (!empty($_POST) && !empty($_POST['data'])) {
 }else {
     $response = [
         'status' => false,
-        'msg' => 'Someting went wrong!'
+        'msg' => 'Something went wrong!'
     ];
 }
 echo json_encode($response);
@@ -88,6 +98,16 @@ function sendEmail($voterid, $conn, $ballotPaperNumber) {
         } else {
             return false;
         }
+    }
+    return false;
+}
+
+function checkLoginEmail($loginEmail, $voterid, $conn) {
+    $query = "SELECT * FROM `voterinfo` WHERE voterid='$voterid'";
+    $result = mysqli_query($conn, $query);
+    $data = mysqli_fetch_assoc($result);
+    if ($data && $data['email'] == $loginEmail) {
+       return true;
     }
     return false;
 }

@@ -160,7 +160,7 @@ function checkVoterVoteCastStatus($voterid, $conn) {
                                                 <input class="form-control vote-input-box checkbox-<?=$postDetail['post_id']?>" type="checkbox" data-candidateid="<?=$candidate['candidateid']?>" data-postid="<?=$postDetail['post_id']?>">
                                             </div>
                                             <div class="col-md-5" style="padding-top: 1%; margin-right: 0; padding-right: 0">
-                                                Hasibur Rahman
+                                                <?=$candidate['candidatename']?>
                                             </div>
                                             <div class="col-md-6" style="margin-left: 0; padding-left: 0">
                                                 <?php

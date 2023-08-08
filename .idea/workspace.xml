@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="08eca573-c027-4d27-8067-7310523b368a" name="Changes" comment="shelve change">
-      <change afterPath="$PROJECT_DIR$/voter/img/club-logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/voter/img/vote-completed.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/voter/change-password.php" beforeDir="false" afterPath="$PROJECT_DIR$/voter/change-password.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/voter/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/voter/dashboard.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/voter/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/voter/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/voter/navbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/voter/navbar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/voter/voting-panel.php" beforeDir="false" afterPath="$PROJECT_DIR$/voter/voting-panel.php" afterDir="false" />
-    </list>
+    <list default="true" id="08eca573-c027-4d27-8067-7310523b368a" name="Changes" comment="design updated" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -113,7 +104,7 @@
       <workItem from="1691065040117" duration="8303000" />
       <workItem from="1691319567701" duration="12400000" />
       <workItem from="1691375917816" duration="449000" />
-      <workItem from="1691387117145" duration="34058000" />
+      <workItem from="1691387117145" duration="34290000" />
     </task>
     <task id="LOCAL-00001" summary="code updated">
       <option name="closed" value="true" />
@@ -251,7 +242,15 @@
       <option name="project" value="LOCAL" />
       <updated>1691426759891</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="design updated">
+      <option name="closed" value="true" />
+      <created>1691435708583</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1691435708583</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -259,7 +258,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Reset functionalities completed" />
-    <MESSAGE value="design updated" />
     <MESSAGE value="send mail updated" />
     <MESSAGE value="code organized" />
     <MESSAGE value="candidate images and voter login issues solved" />
@@ -268,7 +266,8 @@
     <MESSAGE value="ballot paper number added" />
     <MESSAGE value="change password otp verification added" />
     <MESSAGE value="code updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="code updated" />
+    <MESSAGE value="design updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="design updated" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

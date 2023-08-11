@@ -4,7 +4,7 @@ if (isset($_POST['displaySend'])) {
     $table = '<table class="table">
   <thead>
     <tr>
-      <th scope="col">Post Serial Number</th>
+      <th scope="col">Post ID</th>
       <th scope="col">Number of Seat</th>
       <th scope="col">Post Type</th>
       <th scope="col">Post Description</th>
@@ -22,7 +22,7 @@ if (isset($_POST['displaySend'])) {
         $postdesc = $row['postdescription'];
         $multiple_person = $row['multiple_person'];
         $table .= '<tr>
-      <td scope="row">' . $row['serial'] . '</td>
+      <td scope="row">' . $id . '</td>
       <td>' . $postnum . '</td>
       <td>' . $posttype . '</td>
       <td>' . $postdesc . '</td>

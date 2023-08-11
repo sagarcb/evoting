@@ -30,6 +30,10 @@
         <div class="form-box">
             <div class="form">
                 <form action="" enctype="multipart/form-data">
+                    <div class="d-flex justify-content-between" style="margin-top: -50%; margin-bottom: 20%; margin-left: 7%">
+                        <img class="d-flex" src="https://www.sub.ac.bd/uploads/logo/cdcbff91d69b664eef72.jpg" height="50" alt="">
+                        <img class="d-flex" src="/evoting/voter/img/club-logo.png" height="80" alt="" style="margin-bottom: -5%">
+                    </div>
                     <h2>Voter Login</h2>
                     <div class="error">Error</div>
                     <div class="input-box">

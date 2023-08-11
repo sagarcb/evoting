@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="08eca573-c027-4d27-8067-7310523b368a" name="Changes" comment="an issue resolved">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="08eca573-c027-4d27-8067-7310523b368a" name="Changes" comment="code updated">
       <change beforePath="$PROJECT_DIR$/voter/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/voter/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/voter/js/voterlogin.js" beforeDir="false" afterPath="$PROJECT_DIR$/voter/js/voterlogin.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,6 +111,7 @@
       <workItem from="1691458602527" duration="852000" />
       <workItem from="1691553630788" duration="637000" />
       <workItem from="1691561456117" duration="2340000" />
+      <workItem from="1691730701870" duration="27022000" />
     </task>
     <task id="LOCAL-00001" summary="code updated">
       <option name="closed" value="true" />
@@ -264,7 +265,47 @@
       <option name="project" value="LOCAL" />
       <updated>1691458711683</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="post id manually code added">
+      <option name="closed" value="true" />
+      <created>1691734046022</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1691734046022</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Voter forgot password mechanism completed">
+      <option name="closed" value="true" />
+      <created>1691744116923</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1691744116923</updated>
+    </task>
+    <task id="LOCAL-00022" summary="voter login design updated">
+      <option name="closed" value="true" />
+      <created>1691746790868</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1691746790868</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Election report completed">
+      <option name="closed" value="true" />
+      <created>1691771418384</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1691771418384</updated>
+    </task>
+    <task id="LOCAL-00024" summary="code updated">
+      <option name="closed" value="true" />
+      <created>1691772860960</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1691772860960</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -279,10 +320,14 @@
     <MESSAGE value="Voting submission completed" />
     <MESSAGE value="ballot paper number added" />
     <MESSAGE value="change password otp verification added" />
-    <MESSAGE value="code updated" />
     <MESSAGE value="design updated" />
     <MESSAGE value="an issue resolved" />
-    <option name="LAST_COMMIT_MESSAGE" value="an issue resolved" />
+    <MESSAGE value="post id manually code added" />
+    <MESSAGE value="Voter forgot password mechanism completed" />
+    <MESSAGE value="voter login design updated" />
+    <MESSAGE value="Election report completed" />
+    <MESSAGE value="code updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="code updated" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -318,11 +363,6 @@
           <option name="timeStamp" value="31" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/Dashboard/postinfo/add.php</url>
-          <line>7</line>
-          <option name="timeStamp" value="32" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/voter/vote-submission.php</url>
           <line>36</line>
           <option name="timeStamp" value="42" />
@@ -336,6 +376,21 @@
           <url>file://$PROJECT_DIR$/voter/verify-change-password-otp.php</url>
           <line>1</line>
           <option name="timeStamp" value="46" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/voter/forgotpassword/match-otp.php</url>
+          <line>7</line>
+          <option name="timeStamp" value="47" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/voter/forgotpassword/update-password-backend.php</url>
+          <line>5</line>
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/Dashboard/report/index.php</url>
+          <line>5</line>
+          <option name="timeStamp" value="55" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

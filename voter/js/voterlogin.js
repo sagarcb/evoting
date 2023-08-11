@@ -21,6 +21,7 @@ submitbtn.onclick = () => {
         else {
           errortxt.textContent = data;
           errortxt.style.display = "block";
+          errortxt.style.marginTop = "10%"
         }
       }
     }

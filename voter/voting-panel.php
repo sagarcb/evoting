@@ -222,12 +222,14 @@ function checkVoterVoteCastStatus($voterid, $conn) {
                     <?php }else{
                         if ($electionIsOpen) {?>
                         <div class="vote-completed-section" style="margin-top: 15px">
+                            <img src="./img/vote_closed.png" alt="" style="width: 14%">
                             <h3>No Posts are available right now!</h3>
                             <a href="dashboard.php"><button>Back To Dashboard-></button></a>
                         </div>
                     <?php }else { ?>
                         <div class="vote-completed-section" style="margin-top: 15px">
-                            <h3>No Election is Active right now...!</h3>
+                            <img src="./img/vote_closed.png" alt="" style="width: 14%; margin-bottom: 5px">
+                            <h3 style="margin-bottom: 20px">Poll is inactive now..!</h3>
                             <a href="dashboard.php"><button>Back To Dashboard-></button></a>
                         </div>
 

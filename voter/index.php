@@ -45,6 +45,7 @@
                     </div>
                     <div class="group">
                         <span><a href="voterregister.php">Signup</a></span>
+                        <span><a href="./forgotpassword/index.php">Forgot Password</a></span>
                     </div>
                 </form>
             </div>

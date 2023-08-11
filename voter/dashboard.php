@@ -40,8 +40,13 @@
             color: #FFFFFF;
             border: none;
             height: 50px;
-            width: 120%;
+            width: 170%;
             padding: 3%;
+        }
+        #open-voting-panel:hover {
+            -webkit-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.75);
+            -moz-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.75);
+            box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.75);
         }
     </style>
 
@@ -57,9 +62,8 @@
             </div>
             <h2>Welcome To SUB eVoting System</h2>
             <h2><?=$votername?></h2>
-            <div class="link-container d-flex justify-content-between">
-                <a href="voting-panel.php" style="margin-right: 5%"><button>Open Voting Panel-></button></a>
-                <a href="change-password.php"><button>Change Password-></button></a>
+            <div class="link-container text-center">
+                <a href="voting-panel.php" style="margin-left: -34%"><button id="open-voting-panel"><b>Open Voting Panel-></b></button></a>
             </div>
         </div>
     </div>
@@ -82,4 +86,5 @@
 <?php
 unset($_SESSION['voter_success_msg']);
 unset($_SESSION['change_password']);
+unset($_SESSION['forgot-pass']);
 ?>

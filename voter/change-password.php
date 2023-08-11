@@ -167,7 +167,7 @@ function sendEmail($voterid, $conn, $otp) {
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="confirmNewPass" class="col-sm-4 col-form-label">New Password:</label>
+                        <label for="confirmNewPass" class="col-sm-4 col-form-label">Confirm New Password:</label>
                         <div class="col-sm-8">
                             <input type="password" name="confirm_new_password" class="form-control" id="confirmNewPass" placeholder="Confirm New Password" required>
                         </div>

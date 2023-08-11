@@ -554,15 +554,14 @@ $parentRefreshIcon = '<svg fill="#ffffff" height="18px" width="18px" version="1.
                             </li>
                         </ul>
                     </li>
-<!--                    <li class="nav-item">-->
-<!--                        <a href="pages/calendar.html" class="nav-link">-->
-<!--                            <i class="nav-icon far fa-calendar-alt"></i>-->
-<!--                            <p>-->
-<!--                                View Result-->
-<!--                                <span class="badge badge-info right">2</span>-->
-<!--                            </p>-->
-<!--                        </a>-->
-<!--                    </li>-->
+                    <li class="nav-item">
+                        <a href="/evoting/Dashboard/report/index.php" class="nav-link">
+                            <i class="nav-icon fas fa-tree"></i>
+                            <p>
+                                Voting Report
+                            </p>
+                        </a>
+                    </li>
                     <li class="nav-item" id="reset-links">
                         <a href="#" class="nav-link">
                             <?=$parentRefreshIcon?>

@@ -367,7 +367,7 @@ $parentRefreshIcon = '<svg fill="#ffffff" height="18px" width="18px" version="1.
                                     aria-labelledby="exampleModalLabel" aria-hidden="true">
 
                                     <div class="modal-dialog" role="document">
-                                        <div class="modal-content" style="height: 620px">
+                                        <div class="modal-content" style="height: 705px">
                                             <div class="modal-header">
                                                 <h5 class="modal-title" id="exampleModalLabel">Add Post</h5>
                                                 <button type="button" class="close" data-dismiss="modal"
@@ -377,6 +377,10 @@ $parentRefreshIcon = '<svg fill="#ffffff" height="18px" width="18px" version="1.
                                             </div>
                                             <div class="modal-body">
 
+                                                <div class="form-group">
+                                                    <label for="postid">Post ID</label>
+                                                    <input type="number" name="postid" id="postid" class="form-control">
+                                                </div>
                                                 <div class="form-group">
                                                     <label for="number">Post Seat Number</label>
 <!--                                                    <input type="text" class="form-control" id="number"-->
@@ -409,9 +413,10 @@ $parentRefreshIcon = '<svg fill="#ffffff" height="18px" width="18px" version="1.
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="desc">Post Description</label>
-                                                    <textarea name="desc" form="" type="text" class="form-control"
+                                                    <textarea name="desc" form="" type="text" class="form-control" style="height: 100px"
                                                         id="desc" placeholder="Write Description"></textarea>
                                                 </div>
+                                                <p style="color: red" id="postErrMsg"></p>
                                             </div>
                                             <div class="modal-footer">
 
@@ -475,6 +480,9 @@ $parentRefreshIcon = '<svg fill="#ffffff" height="18px" width="18px" version="1.
                                         var post = $('#posttype').val();
                                         var desc = $('#desc').val();
                                         var multiple_person = $('#multiple_person').val();
+                                        var postid = $('#postid').val();
+                                        var postErrMsgBox = $('#postErrMsg');
+                                        postErrMsgBox.text('');
                                         $.ajax({
                                             url: "/evoting/Dashboard/postinfo/add.php",
                                             type: 'post',
@@ -482,15 +490,35 @@ $parentRefreshIcon = '<svg fill="#ffffff" height="18px" width="18px" version="1.
                                                 numSend: num,
                                                 postSend: post,
                                                 descSend: desc,
-                                                multiple_person: multiple_person
+                                                multiple_person: multiple_person,
+                                                postid: postid
                                             },
                                             success: function (data, status) {
-                                                $('#completeModal').modal('hide');
-                                                displayData();
+                                                let res = JSON.parse(data);
+                                                if (res.status) {
+                                                    $(postErrMsgBox).text('');
+                                                    $('#completeModal').modal('hide');
+                                                    displayData();
+                                                    clearAddPostInputs()
+                                                }else {
+                                                    $(postErrMsgBox).text(res.msg);
+                                                }
+                                            },
+                                            error: function (error) {
+                                                console.log(error)
                                             }
                                         });
 
                                     };
+
+                                    function clearAddPostInputs() {
+                                        $('#number').val('');
+                                        $('#posttype').val('');
+                                        $('#desc').val('');
+                                        $('#multiple_person').val('');
+                                        $('#postid').val('');
+                                        $('#postErrMsg');
+                                    }
 
                                 </script>
 

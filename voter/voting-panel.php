@@ -3,7 +3,7 @@ include_once "unauthenticated_redirection.php";
 include_once "php/db.php";
 
 $voteCastStatus = checkVoterVoteCastStatus($voterid, $conn);
-
+$isVotEnable = false;
 if ($voteCastStatus) {
     $electionDetailsQuery = "SELECT * FROM `electioninfo` WHERE electionstatus=1";
     $result = mysqli_query($conn, $electionDetailsQuery);
@@ -18,6 +18,7 @@ if ($voteCastStatus) {
                                 WHERE postinfo.posttype=0 OR postinfo.posttype='$voterBatch'";
         $result = mysqli_query($conn, $getPostDataQuery);
         if (!empty($result)) {
+            $isVotEnable = true;
             while ($row = $result->fetch_assoc()) {
                 $postid = $row['postid'];
                 if (!isset($data[$postid])) {
@@ -244,7 +245,23 @@ function checkVoterVoteCastStatus($voterid, $conn) {
             </div>
         </div>
     </div>
+<?php include 'copyright.php'?>
 <?php include 'footer.php'?>
+
+<style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+    }
+    <?php if (!$isVotEnable) { ?>
+    .footer {
+        position: absolute !important;
+        bottom: 0 !important;
+        width: 100% !important;
+    }
+    <?php } ?>
+</style>
 
 <script>
     $(document).ready(function () {

@@ -210,6 +210,8 @@ $a = 323;
 
 </div>
 
+<?php include_once "../copyright.php"?>
+
 <div id="loader" class="hidden">
     <div class="loader-content">
         <span>Please wait...</span>

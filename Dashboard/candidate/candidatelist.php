@@ -67,11 +67,11 @@ function showTwoWordPostDescription($desc) {
     </div>
 
 
-    <div id="displaycandidate">
+    <div id="displaycandidate" style="margin-bottom: 20px">
 
     </div>
-
 </div>
+<?php include "../copyright.php"?>
 
 <div class="modal hide fade" id="addCandidateModal" tabindex="-1" role="dialog"
      aria-labelledby="exampleModalLabel" aria-hidden="true">

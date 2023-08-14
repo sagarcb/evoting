@@ -68,6 +68,7 @@
         </div>
     </div>
 </div>
+<?php include "./copyright.php"?>
 <?php include 'footer.php'?>
 <?php if (!empty($_SESSION['voter_success_msg'])) { ?>
     <script>

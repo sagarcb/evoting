@@ -182,7 +182,15 @@ function sendEmail($voterid, $conn, $otp) {
             </div>
         </div>
     </div>
+<?php include 'copyright.php'?>
 <?php include 'footer.php'?>
+
+<style>
+    .footer {
+        margin-top: 7.5%!important;
+        position: fixed;
+    }
+</style>
 
 <script>
     $(document).ready(function () {

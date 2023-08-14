@@ -6,9 +6,9 @@
   <?php include "../aside.php" ?>
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+  <section class="content-wrapper">
     <section class="content">
-      <div id="displayDataTable">
+      <div id="displayDataTable" style="margin-bottom: 20px">
 
       </div>
       <div class="modal hide fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -181,34 +181,11 @@
 
         }
       </script>
-  </div>
-
-  </a>
-  </li>
-  </ul>
-  </div>
-  </div>
-  </div>
-  </ul>
-
   <!-- /.card -->
   </section>
-
-
-  </div>
-
-  </div>
-
-
-
-  </div>
   </section>
-  </div>
-  </section>
-  </div>
-  <aside class="control-sidebar control-sidebar-dark">
-  </aside>
-  </div>
+  <?php include_once "../copyright.php"?>
+
   <script src="../plugins/jquery/jquery.min.js"></script>
   <script src="../plugins/jquery-ui/jquery-ui.min.js"></script>
   <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -226,8 +203,6 @@
   <script src="../dist/js/demo.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
-
-  </script>
 
 </body>
 

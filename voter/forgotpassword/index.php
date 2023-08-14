@@ -63,7 +63,15 @@
         </div>
     </div>
 </div>
+<?php include '../copyright.php'?>
 <?php include '../footer.php'?>
+
+<style>
+    .footer {
+        margin-top: 17.5%;
+        position:fixed!important;
+    }
+</style>
 
 <script>
     $(document).ready(function () {

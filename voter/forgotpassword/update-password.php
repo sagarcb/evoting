@@ -72,7 +72,15 @@ if (!isset($_SESSION['forgot-pass'])) {
         </div>
     </div>
 </div>
+<?php include '../copyright.php'?>
 <?php include '../footer.php'?>
+
+<style>
+    .footer {
+        margin-top: 20%;
+        position: fixed;
+    }
+</style>
 
 <script>
     $(document).ready(function () {

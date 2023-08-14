@@ -305,7 +305,18 @@ $a = 323;
             printWindow.document.write("<html><head><title><?=$electionTitle? $electionTitle . ' Report' : 'Election Report'?></title>" +
                 "<style>#reportTable, #reportTable th, #reportTable td {border: 1px solid #000 !important; text-align: center}" +
                 "</style>" +
-                "</head><body>" + tableHtml.prop("outerHTML") + "</body></html>");
+                "</head><body>" + tableHtml.prop("outerHTML") +
+                "<div class='footer'><div class='left-signature'><p><hr>Head Of The Department</p></div><div class='right-signature'>"+
+                "<p><hr>Hello World</p></div></div>"+
+                "<style>" +
+                "html, body {margin: 0;padding: 0;height: 100%;}"+
+                ".footer {bottom: 0;width: 100%;background-color: #ffffff;display: flex;"+
+                "justify-content: space-between;align-items: center;padding: 10px 0;margin-top: 6%;}"+
+                ".left-signature, .right-signature {flex: 1;text-align: left;padding-left: 20px;}"+
+                ".right-signature {text-align: right;padding-right: 20px;}"+
+                ".left-signature hr {width: 60%; margin-left: 0} .right-signature hr {width: 60%; margin-right: 0}"+
+                "</style>"+
+                "</body></html>");
             printWindow.document.close();
             printWindow.print();
         })

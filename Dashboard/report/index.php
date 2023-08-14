@@ -302,7 +302,7 @@ $a = 323;
             tableHtml.removeClass("d-print-none");
             tableHtml.addClass("d-print-block");
             tableHtml.find("button").remove();
-            printWindow.document.write("<html><head><title><?=$electionTitle ? $electionTitle : 'Election Report'?></title>" +
+            printWindow.document.write("<html><head><title><?=$electionTitle? $electionTitle . ' Report' : 'Election Report'?></title>" +
                 "<style>#reportTable, #reportTable th, #reportTable td {border: 1px solid #000 !important; text-align: center}" +
                 "</style>" +
                 "</head><body>" + tableHtml.prop("outerHTML") + "</body></html>");

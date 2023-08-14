@@ -2,6 +2,9 @@
 <?php
 include '../../php/db.php';
 
+/*Getting Election Title*/
+$electionTitle = electionTitle($conn);
+
 $postData = [];
 $data = retrieveReportData($conn);
 $finalData = [];
@@ -30,6 +33,12 @@ foreach ($data as $key => $row) {
 
 foreach ($finalData as $key => $row) {
     $finalData[$key]['count'] = count($row['candidates']);
+}
+
+function electionTitle($conn) {
+    $query = "SELECT * FROM `electioninfo`";
+    $data = mysqli_query($conn, $query)->fetch_assoc();
+    return $data['electiontitle'];
 }
 
 function retrieveReportData($conn) {
@@ -79,7 +88,7 @@ $a = 323;
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Election Report</title>
+    <title><?=$electionTitle ? $electionTitle : 'Election Report'?></title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -293,7 +302,7 @@ $a = 323;
             tableHtml.removeClass("d-print-none");
             tableHtml.addClass("d-print-block");
             tableHtml.find("button").remove();
-            printWindow.document.write("<html><head><title>Election Report</title>" +
+            printWindow.document.write("<html><head><title><?=$electionTitle ? $electionTitle : 'Election Report'?></title>" +
                 "<style>#reportTable, #reportTable th, #reportTable td {border: 1px solid #000 !important; text-align: center}" +
                 "</style>" +
                 "</head><body>" + tableHtml.prop("outerHTML") + "</body></html>");

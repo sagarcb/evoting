@@ -306,8 +306,8 @@ $a = 323;
                 "<style>#reportTable, #reportTable th, #reportTable td {border: 1px solid #000 !important; text-align: center}" +
                 "</style>" +
                 "</head><body>" + tableHtml.prop("outerHTML") +
-                "<div class='footer'><div class='left-signature'><p><hr>Head Of The Department</p></div><div class='right-signature'>"+
-                "<p><hr>Hello World</p></div></div>"+
+                "<div class='footer'><div class='left-signature'><p><hr>Hello World</p></div><div class='right-signature'>"+
+                "<p><hr>Head Of The Department</p></div></div>"+
                 "<style>" +
                 "html, body {margin: 0;padding: 0;height: 100%;}"+
                 ".footer {bottom: 0;width: 100%;background-color: #ffffff;display: flex;"+

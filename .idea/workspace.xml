@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="08eca573-c027-4d27-8067-7310523b368a" name="Changes" comment="code updated">
+      <change afterPath="$PROJECT_DIR$/img/logo.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dashboard/report/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Dashboard/report/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dashboard/unauthenticated_redirection.php" beforeDir="false" afterPath="$PROJECT_DIR$/Dashboard/unauthenticated_redirection.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +59,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/xampp8.1/htdocs/btoj/vue-gantt-chart",
+    "last_opened_file_path": "C:/xampp8.1/htdocs/evoting/img",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -74,11 +77,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp8.1\htdocs\evoting\voter\img" />
+      <recent name="C:\xampp8.1\htdocs\evoting\img" />
       <recent name="C:\xampp8.1\htdocs\evoting\voter" />
+      <recent name="C:\xampp8.1\htdocs\evoting\voter\img" />
       <recent name="C:\xampp8.1\htdocs\evoting\Dashboard\candidate\candidate_images" />
       <recent name="C:\xampp7.4\htdocs\evote\Dashboard\candidate" />
-      <recent name="C:\xampp7.4\htdocs\evote\js" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -112,6 +115,8 @@
       <workItem from="1691561456117" duration="2340000" />
       <workItem from="1691730701870" duration="27673000" />
       <workItem from="1691984603147" duration="52000" />
+      <workItem from="1691994707510" duration="9808000" />
+      <workItem from="1692076052351" duration="4593000" />
     </task>
     <task id="LOCAL-00001" summary="code updated">
       <option name="closed" value="true" />
@@ -313,7 +318,47 @@
       <option name="project" value="LOCAL" />
       <updated>1691773837205</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="copyright added">
+      <option name="closed" value="true" />
+      <created>1692032851893</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1692032851893</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Election title added">
+      <option name="closed" value="true" />
+      <created>1692033590873</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1692033590873</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Election title added">
+      <option name="closed" value="true" />
+      <created>1692033752415</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1692033752415</updated>
+    </task>
+    <task id="LOCAL-00029" summary="code updated">
+      <option name="closed" value="true" />
+      <created>1692035540524</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1692035540524</updated>
+    </task>
+    <task id="LOCAL-00030" summary="code updated">
+      <option name="closed" value="true" />
+      <created>1692036788294</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1692036788294</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -334,6 +379,8 @@
     <MESSAGE value="Voter forgot password mechanism completed" />
     <MESSAGE value="voter login design updated" />
     <MESSAGE value="Election report completed" />
+    <MESSAGE value="copyright added" />
+    <MESSAGE value="Election title added" />
     <MESSAGE value="code updated" />
     <option name="LAST_COMMIT_MESSAGE" value="code updated" />
   </component>
@@ -397,7 +444,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/Dashboard/report/index.php</url>
-          <line>5</line>
+          <line>8</line>
           <option name="timeStamp" value="55" />
         </line-breakpoint>
       </breakpoints>

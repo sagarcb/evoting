@@ -297,15 +297,25 @@ $a = 323;
         var printBtn = $('#printBtn');
         var table = $('#reportTable');
         $(printBtn).on('click', function () {
-            var printWindow = window.open("", "Print Window");
+            var printWindow = window.open("", "Print_Window");
             var tableHtml = $(table).clone();
             tableHtml.removeClass("d-print-none");
             tableHtml.addClass("d-print-block");
             tableHtml.find("button").remove();
-            printWindow.document.write("<html><head><title><?=$electionTitle? $electionTitle . ' Report' : 'Election Report'?></title>" +
-                "<style>#reportTable, #reportTable th, #reportTable td {border: 1px solid #000 !important; text-align: center}" +
+            tableHtml.find("tr").css("page-break-inside", "avoid");
+            printWindow.document.write("<html><head><title>Election Report</title>" +
+                "<style>" +
+                "table {border-collapse: collapse;border: 1px solid black; text-align: center;}" +
+                "th, td {border: 1px solid black; padding: 5px}" +
+                "td:nth-child(1) {border-right: none;}"+
+                "head title {display: none}"+
                 "</style>" +
-                "</head><body>" + tableHtml.prop("outerHTML") +
+                "</head><body>" +
+                "<h2 style='text-align: center'><?=$electionTitle? $electionTitle . ' Report' : 'Election Report'?></h2>"+
+                "<div class='logo'>" +
+                "<img src='../../img/logo.jpg' style='height: 5%'>"+
+                "</div>" +
+                tableHtml.prop("outerHTML") +
                 "<div class='footer'><div class='left-signature'><p><hr>Hello World</p></div><div class='right-signature'>"+
                 "<p><hr>Head Of The Department</p></div></div>"+
                 "<style>" +
@@ -315,10 +325,13 @@ $a = 323;
                 ".left-signature, .right-signature {flex: 1;text-align: left;padding-left: 20px;}"+
                 ".right-signature {text-align: right;padding-right: 20px;}"+
                 ".left-signature hr {width: 60%; margin-left: 0} .right-signature hr {width: 60%; margin-right: 0}"+
+                ".logo {top: 0;right: 0;margin: 20px;width: 100px;}"+
                 "</style>"+
                 "</body></html>");
             printWindow.document.close();
-            printWindow.print();
+            printWindow.onload = function() {
+                printWindow.print();
+            };
         })
     })
 </script>

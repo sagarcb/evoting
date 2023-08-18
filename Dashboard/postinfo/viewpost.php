@@ -140,7 +140,6 @@
             },
             success: function (data, status) {
               displayData();
-
             }
           });
         }

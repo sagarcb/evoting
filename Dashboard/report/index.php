@@ -291,8 +291,9 @@ $a = 323;
                 "<img src='../../img/logo.jpg' style='height: 5%'>"+
                 "</div>" +
                 tableHtml.prop("outerHTML") +
-                "<div class='footer'><div class='left-signature'><p><hr>Hello World</p></div><div class='right-signature'>"+
-                "<p><hr>Head Of The Department</p></div></div>"+
+                "<div class='footer'><div class='left-signature'><p><hr>Election Commissioner</p></div>" +
+                "<div class='right-signature'>"+
+                "<p style='color: black; font-weight: bold'><hr style='margin-top: -4%; background: black'></p></div></div>"+
                 "<style>" +
                 "html, body {margin: 0;padding: 0;height: 100%;}"+
                 ".footer {bottom: 0;width: 100%;background-color: #ffffff;display: flex;"+

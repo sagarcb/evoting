@@ -29,153 +29,118 @@ $parentRefreshIcon = '<svg fill="#ffffff" height="18px" width="18px" version="1.
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="#" class="nav-link" id="electionEditBtn" data-toggle="modal" data-target="#electionModal">
                             <i class="nav-icon fas fa-copy"></i>
                             <p>
-                                Update election info
-                                <i class="fas fa-angle-left right"></i>
+                                Election Edit
                             </p>
                         </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <div class="modal hide fade" id="electionModal" tabindex="-1" role="dialog"
-                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal hide fade" id="electionModal" tabindex="-1" role="dialog"
+                             aria-labelledby="exampleModalLabel" aria-hidden="true">
 
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">Add Election</h5>
-                                                <button type="button" class="close" data-dismiss="modal"
-                                                    aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Add Election</h5>
+                                        <button type="button" class="close" data-dismiss="modal"
+                                                aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
 
-                                                <div class="form-group">
-                                                    <label for="electiontitle">Election Title</label>
-                                                    <input type="text" class="form-control" id="electiontitle"
-                                                        placeholder="Election Title">
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="electionpass">Election Password</label>
-                                                    <input type="password" class="form-control" id="electionpass"
-                                                        placeholder="Election Password">
-                                                </div>
-
-                                                <div class="form-group">
-                                                    <label for="electionstatus">Election Status</label>
-
-                                                    <select name="electionstatus" type="text" id="electionstatus"
-                                                        class="form-control">
-                                                        <option value="0">0</option>
-                                                        <option value="1">1</option>
-                                                    </select>
-
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="startime">Election Start Date And Time</label>
-                                                    <input type="datetime-local" class="form-control" id="starttime"
-                                                        placeholder="Election start Date And Time">
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="endtime">Election End Date And Time</label>
-                                                    <input type="datetime-local" class="form-control" id="endtime">
-                                                </div>
-
-                                            </div>
-                                            <div class="modal-footer">
-
-                                                <button type="button" class="btn btn-secondary"
-                                                    data-dismiss="modal">Close</button>
-                                                <button type="submit" name="button" class="btn btn-primary"
-                                                    onclick="electiontitle();">Save</button>
-                                            </div>
+                                        <div class="form-group">
+                                            <label for="electiontitle">Election Title</label>
+                                            <input type="text" class="form-control" id="electiontitle"
+                                                   placeholder="Election Title">
                                         </div>
+                                        <div class="form-group">
+                                            <label for="electionpass">Election Password</label>
+                                            <input type="password" class="form-control" id="electionpass"
+                                                   placeholder="Election Password">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="electionstatus">Election Status</label>
+
+                                            <select name="electionstatus" type="text" id="electionstatus"
+                                                    class="form-control">
+                                                <option value="0">0</option>
+                                                <option value="1">1</option>
+                                            </select>
+
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="startime">Election Start Date And Time</label>
+                                            <input type="datetime-local" class="form-control" id="starttime"
+                                                   placeholder="Election start Date And Time">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="endtime">Election End Date And Time</label>
+                                            <input type="datetime-local" class="form-control" id="endtime">
+                                        </div>
+
+                                    </div>
+                                    <div class="modal-footer">
+
+                                        <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Close</button>
+                                        <button type="submit" name="button" class="btn btn-primary"
+                                                onclick="electiontitle();">Save</button>
                                     </div>
                                 </div>
-                                <div class="container">
-                                    <button type="button" id="electionEditBtn" class="sidebar-dark-primary"
-                                        style="margin-left:10px;border:none;color:white;" data-toggle="modal"
-                                        data-target="#electionModal"><i class="far fa-circle nav-icon"></i>
-                                        Election Edit
-                                    </button>
-                                </div>
-                                <style>
-                                    #electionModal {
-                                        margin-left: 80px;
-
-                                    }
-
-                                    #updatevotermodal {
-                                        margin-left: 80px;
-                                    }
-
-                                    .modal-content {
-                                        border: 1px solid blue;
-                                        width: 600px;
-
-                                    }
-
-                                    .modal-backdrop {
-                                        position: inherit !important;
-
-                                    }
-                                </style>
-                                <script
-                                    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-                                <script>
-                                    $(document).ready(function () {
-                                        $('#electionEditBtn').on('click', function () {
-                                            $.ajax({
-                                                url: "/evoting/Dashboard/electioninfo/getElectionDetailsData.php",
-                                                type: 'get',
-                                                success: function (data) {
-                                                    let resp = JSON.parse(data);
-                                                    if (resp.status) {
-                                                        const response = resp.data
-                                                        console.log(response);
-                                                        $('#electiontitle').val(response.electiontitle)
-                                                        $('#electionpass').val(response.electionpassword)
-                                                        $(`#electionstatus option[value=${response.electionstatus}]`).prop('selected', true)
-                                                        $('#starttime').val(response.electionstartdatetime)
-                                                        $('#endtime').val(response.electionenddatetime)
-                                                    }
-                                                },
-                                                error: function (error) {
-                                                    console.log(error);
-                                                }
-                                            })
-                                        })
-                                    })
-
-                                    function electiontitle() {
-                                        var electiontitle = $('#electiontitle').val();
-                                        var electionpass = $('#electionpass').val();
-                                        var electionstatus = $('#electionstatus').val();
-                                        var starttime = $('#starttime').val();
-                                        var endtime = $('#endtime').val();
-                                        $.ajax({
-                                            url: "/evoting/Dashboard/electioninfo/addelection.php",
-                                            type: 'post',
-                                            data: {
-                                                electiontitle: electiontitle,
-                                                electionpass: electionpass,
-                                                electionstatus: electionstatus,
-                                                starttime: starttime,
-                                                endtime: endtime
-                                            },
-                                            success: function (data, status) {
-                                                $('#electionModal').modal('hide');
-                                                // electiondisplay();
+                            </div>
+                        </div>
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                        <script>
+                            $(document).ready(function () {
+                                $('#electionEditBtn').on('click', function () {
+                                    $.ajax({
+                                        url: "/evoting/Dashboard/electioninfo/getElectionDetailsData.php",
+                                        type: 'get',
+                                        success: function (data) {
+                                            let resp = JSON.parse(data);
+                                            if (resp.status) {
+                                                const response = resp.data
+                                                console.log(response);
+                                                $('#electiontitle').val(response.electiontitle)
+                                                $('#electionpass').val(response.electionpassword)
+                                                $(`#electionstatus option[value=${response.electionstatus}]`).prop('selected', true)
+                                                $('#starttime').val(response.electionstartdatetime)
+                                                $('#endtime').val(response.electionenddatetime)
                                             }
-                                        });
+                                        },
+                                        error: function (error) {
+                                            console.log(error);
+                                        }
+                                    })
+                                })
+                            })
 
-                                    };
-                                </script>
-                            </li>
+                            function electiontitle() {
+                                var electiontitle = $('#electiontitle').val();
+                                var electionpass = $('#electionpass').val();
+                                var electionstatus = $('#electionstatus').val();
+                                var starttime = $('#starttime').val();
+                                var endtime = $('#endtime').val();
+                                $.ajax({
+                                    url: "/evoting/Dashboard/electioninfo/addelection.php",
+                                    type: 'post',
+                                    data: {
+                                        electiontitle: electiontitle,
+                                        electionpass: electionpass,
+                                        electionstatus: electionstatus,
+                                        starttime: starttime,
+                                        endtime: endtime
+                                    },
+                                    success: function (data, status) {
+                                        $('#electionModal').modal('hide');
+                                        // electiondisplay();
+                                    }
+                                });
 
-                        </ul>
+                            };
+                        </script>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">

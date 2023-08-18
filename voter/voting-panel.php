@@ -10,7 +10,7 @@ if ($voteCastStatus) {
     $data = mysqli_fetch_assoc($result);
     $electionIsOpen = false;
     $postDetails = [];
-    $voterBatch = 3;
+    $voterBatch = $_SESSION['voterinfo']['batch'];
     if (!empty($data)) {
         $electionIsOpen = true;
         $getPostDataQuery = "SELECT postinfo.*, c.candidatename,c.candidateimage,c.candidateid FROM `postinfo` 

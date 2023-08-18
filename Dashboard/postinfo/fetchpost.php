@@ -8,7 +8,7 @@ if (isset($_POST['displaySend'])) {
       <th scope="col">Number of Seat</th>
       <th scope="col">Post Type</th>
       <th scope="col">Post Description</th>
-      <th scope="col"># of select person</th>
+      <th scope="col">Number of select person</th>
        <th scope="col">Action</th>
         
     </tr>

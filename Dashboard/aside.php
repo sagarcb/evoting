@@ -95,10 +95,10 @@ $parentRefreshIcon = '<svg fill="#ffffff" height="18px" width="18px" version="1.
                                     </div>
                                 </div>
                                 <div class="container">
-                                    <button type="button" id-="btn" class="sidebar-dark-primary"
+                                    <button type="button" id="electionEditBtn" class="sidebar-dark-primary"
                                         style="margin-left:10px;border:none;color:white;" data-toggle="modal"
                                         data-target="#electionModal"><i class="far fa-circle nav-icon"></i>
-                                        Election Title
+                                        Election Edit
                                     </button>
                                 </div>
                                 <style>
@@ -125,6 +125,30 @@ $parentRefreshIcon = '<svg fill="#ffffff" height="18px" width="18px" version="1.
                                 <script
                                     src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
                                 <script>
+                                    $(document).ready(function () {
+                                        $('#electionEditBtn').on('click', function () {
+                                            $.ajax({
+                                                url: "/evoting/Dashboard/electioninfo/getElectionDetailsData.php",
+                                                type: 'get',
+                                                success: function (data) {
+                                                    let resp = JSON.parse(data);
+                                                    if (resp.status) {
+                                                        const response = resp.data
+                                                        console.log(response);
+                                                        $('#electiontitle').val(response.electiontitle)
+                                                        $('#electionpass').val(response.electionpassword)
+                                                        $(`#electionstatus option[value=${response.electionstatus}]`).prop('selected', true)
+                                                        $('#starttime').val(response.electionstartdatetime)
+                                                        $('#endtime').val(response.electionenddatetime)
+                                                    }
+                                                },
+                                                error: function (error) {
+                                                    console.log(error);
+                                                }
+                                            })
+                                        })
+                                    })
+
                                     function electiontitle() {
                                         var electiontitle = $('#electiontitle').val();
                                         var electionpass = $('#electionpass').val();
@@ -312,6 +336,9 @@ $parentRefreshIcon = '<svg fill="#ffffff" height="18px" width="18px" version="1.
                                                 </button>
                                             </div>
                                             <div class="modal-body">
+                                                <div class="sampleFileDownload" style="margin-bottom: 3%">
+                                                    <a href="/evoting/Dashboard/voterinfo/sample-excel-file/voters.xlsx">Download Sample Upload Excel File</a>
+                                                </div>
                                                 <form action="/evoting/Dashboard/voterinfo/uploadBulkVoter.php" id="uploadVoterExcelFileForm" method="post" enctype="multipart/form-data">
                                                     <div class="form-group">
                                                         <label for="name">Upload Excel File</label>

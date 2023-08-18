@@ -154,6 +154,9 @@ $a = 323;
         padding-left: 8%;
         padding-right: 8%;
     }
+    textarea[disabled] {
+        background-color: inherit;
+    }
 </style>
 
 <!-- Content Wrapper. Contains page content -->
@@ -171,9 +174,9 @@ $a = 323;
                     <th style="width: 15%">Post Name</th>
                     <th>Candidate Name</th>
                     <th>Candidate Batch</th>
-                    <th>Candidate Rank</th>
                     <th>Vote Count</th>
                     <th>Candidate Image</th>
+                    <th>Remarks</th>
                 </tr>
             </thead>
             <tbody>
@@ -187,7 +190,6 @@ $a = 323;
                         <td style="width: 15%" rowspan="<?=$row['count']?>"><?=$row['posttitle']?></td>
                         <td><?=$candidate['candidatename']?></td>
                         <td><?=$candidate['batch']?></td>
-                        <td><?php echo $candidateKey+1?></td>
                         <td><?=$candidate['vote_count']?></td>
                         <td style="text-align: center">
                             <?php if ($candidate['candidateimage']) { ?>
@@ -196,12 +198,12 @@ $a = 323;
                                 <img src="../candidate/candidate_images/avatar.jpg" alt="" height="50px">
                             <?php } ?>
                         </td>
+                        <td><textarea name="" id="" cols="15" rows="5" style="border: none; outline: none; resize: none;" disabled></textarea></td>
                     </tr>
             <?php }else{ ?>
                         <tr>
                             <td><?=$candidate['candidatename']?></td>
                             <td><?=$candidate['batch']?></td>
-                            <td><?php echo $candidateKey+1?></td>
                             <td><?=$candidate['vote_count']?></td>
                             <td style="text-align: center">
                                 <?php if ($candidate['candidateimage']) { ?>
@@ -210,6 +212,7 @@ $a = 323;
                                     <img src="../candidate/candidate_images/avatar.jpg" alt="" height="50px">
                                 <?php } ?>
                             </td>
+                            <td><textarea name="" id="" cols="15" rows="5" style="border: none; outline: none; resize: none;" disabled></textarea></td>
                         </tr>
                     <?php } }} ?>
 
@@ -220,35 +223,6 @@ $a = 323;
 </div>
 
 <?php include_once "../copyright.php"?>
-
-<div id="loader" class="hidden">
-    <div class="loader-content">
-        <span>Please wait...</span>
-    </div>
-</div>
-<style>
-    #loader {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .loader-content {
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 4px;
-    }
-
-    .hidden {
-        display: none !important;
-    }
-</style>
 
 
 
@@ -308,7 +282,8 @@ $a = 323;
                 "table {border-collapse: collapse;border: 1px solid black; text-align: center;}" +
                 "th, td {border: 1px solid black; padding: 5px}" +
                 "td:nth-child(1) {border-right: none;}"+
-                "head title {display: none}"+
+                "head title {display: none}" +
+                "textarea[disabled] {background-color: inherit;}"+
                 "</style>" +
                 "</head><body>" +
                 "<h2 style='text-align: center'><?=$electionTitle? $electionTitle . ' Report' : 'Election Report'?></h2>"+

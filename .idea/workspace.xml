@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="08eca573-c027-4d27-8067-7310523b368a" name="Changes" comment="code updated">
-      <change afterPath="$PROJECT_DIR$/img/logo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dashboard/electioninfo/getElectionDetailsData.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dashboard/voterinfo/download-sample-excel-file.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dashboard/aside.php" beforeDir="false" afterPath="$PROJECT_DIR$/Dashboard/aside.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dashboard/report/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Dashboard/report/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dashboard/unauthenticated_redirection.php" beforeDir="false" afterPath="$PROJECT_DIR$/Dashboard/unauthenticated_redirection.php" afterDir="false" />
     </list>
@@ -48,33 +50,36 @@
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
     </include_path>
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2ShCOlCE0jKhEOyMBzTjHRy1cZ8" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/xampp8.1/htdocs/evoting/img",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "watcher.settings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/xampp8.1/htdocs/evoting/img&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;watcher.settings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mongo",
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mongo&quot;,
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp8.1\htdocs\evoting\img" />
@@ -82,6 +87,9 @@
       <recent name="C:\xampp8.1\htdocs\evoting\voter\img" />
       <recent name="C:\xampp8.1\htdocs\evoting\Dashboard\candidate\candidate_images" />
       <recent name="C:\xampp7.4\htdocs\evote\Dashboard\candidate" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp8.1\htdocs\evoting\Dashboard\electioninfo" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -116,7 +124,11 @@
       <workItem from="1691730701870" duration="27673000" />
       <workItem from="1691984603147" duration="52000" />
       <workItem from="1691994707510" duration="9808000" />
-      <workItem from="1692076052351" duration="4593000" />
+      <workItem from="1692076052351" duration="4954000" />
+      <workItem from="1692148255468" duration="739000" />
+      <workItem from="1692202921317" duration="1302000" />
+      <workItem from="1692242536565" duration="1193000" />
+      <workItem from="1692363006038" duration="3339000" />
     </task>
     <task id="LOCAL-00001" summary="code updated">
       <option name="closed" value="true" />
@@ -358,7 +370,15 @@
       <option name="project" value="LOCAL" />
       <updated>1692036788294</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="code updated">
+      <option name="closed" value="true" />
+      <created>1692081581327</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1692081581327</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

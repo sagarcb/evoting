@@ -302,13 +302,13 @@ $parentRefreshIcon = '<svg fill="#ffffff" height="18px" width="18px" version="1.
                                             </div>
                                             <div class="modal-body">
                                                 <div class="sampleFileDownload" style="margin-bottom: 3%">
-                                                    <a href="/evoting/Dashboard/voterinfo/sample-excel-file/voters.xlsx">Download Sample Upload Excel File</a>
+                                                    <a href="/evoting/Dashboard/voterinfo/sample-excel-file/voters.xlsx">Download Sample File</a>
                                                 </div>
                                                 <form action="/evoting/Dashboard/voterinfo/uploadBulkVoter.php" id="uploadVoterExcelFileForm" method="post" enctype="multipart/form-data">
                                                     <div class="form-group">
                                                         <label for="name">Upload Excel File</label>
                                                         <input type="file" class="form-control" name="bulkExcelFile" id="voterListExcelFile"
-                                                               placeholder="Upload Excel File" required>
+                                                               placeholder="Upload Excel File"  accept=".xlsx, .xls" required>
                                                     </div>
                                                 </form>
                                             </div>

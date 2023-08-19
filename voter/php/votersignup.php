@@ -7,13 +7,14 @@ $password = mysqli_real_escape_string($conn, $_POST['pass']);
 $cpassword = mysqli_real_escape_string($conn, $_POST['cpass']);
 $name = $_POST['name'];
 $batch = $_POST['batch'];
+$student_id = $_POST['student_id'];
 $email_verification_status = '0';
 $loginstatus = '0';
 $votecaststatus = '0';
 // $last_id = $_POST['voterid'];
 
 // checking fields are not empty
-if (!empty($email) && !empty($password) && !empty($cpassword) && !empty($name) && !empty($batch)) {
+if (!empty($email) && !empty($password) && !empty($cpassword) && !empty($name) && !empty($batch) && !empty($student_id)) {
 
     //if email is valid
     if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -37,8 +38,8 @@ if (!empty($email) && !empty($password) && !empty($cpassword) && !empty($name) &
 //                $password = password_hash($password, PASSWORD_BCRYPT);
                 $password = passwordEncrypt($password);
 
-                $sql2 = mysqli_query($conn, "INSERT INTO voterinfo(voterid,email, password,otp,email_verification_status,votername,batch,loginstatus,votecaststatus)
-                    VALUES ({$last_id},'{$email}','{$password}','{$otp}','{$email_verification_status}','{$name}','{$batch}','{$loginstatus}','{$votecaststatus}')");
+                $sql2 = mysqli_query($conn, "INSERT INTO voterinfo(voterid,email, password,otp,email_verification_status,votername,batch,loginstatus,votecaststatus,student_id)
+                    VALUES ({$last_id},'{$email}','{$password}','{$otp}','{$email_verification_status}','{$name}','{$batch}','{$loginstatus}','{$votecaststatus}','{$student_id}')");
 
                 if ($sql2) {
                     // $last_id = mysqli_insert_id($conn);
@@ -103,6 +104,8 @@ if (!empty($email) && !empty($password) && !empty($cpassword) && !empty($name) &
         printf("Please Enter Confirm Password*");
     } else if (strlen($cpassword) < 6) {
         printf("Password minimum six digits or letters*");
+    }else if (empty($student_id)) {
+        printf("Student ID field is empty*");
     }
 }
 

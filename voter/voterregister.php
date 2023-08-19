@@ -37,7 +37,7 @@
 
                 <form action="" enctype="multipart/form-data">
                     <h2>Register</h2>
-                    <p class="error-text">error
+                    <p class="error-text" style="margin-top: -5%">error
                     </p>
                     <div class="input-box">
                         <i class='bx bxs-envelope' style='color:#0b3d0b'></i>
@@ -60,6 +60,10 @@
                         <input type="password" id="cpass" name="cpass" placeholder="Confirm Password"
                             oninvalid="this.setCustomValidity('Enter 11 Digits Number')"
                             oninput="this.setCustomValidity('')" disabled>
+                    </div>
+                    <div class="input-box">
+                        <i class='bx bxs-envelope' style='color:#0b3d0b'></i>
+                        <input type="text" name="student_id" placeholder="Student ID">
                     </div>
                     <div class="submit">
                         <input type="submit" class="button" value="Register" onclick="function()">
@@ -130,9 +134,9 @@
             //     {
             //         this.innerHTML = "changes Saved";
 
-                    
+
             //     },2000)
-            // }        
+            // }
             </script>
     </body>
 

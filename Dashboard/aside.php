@@ -61,6 +61,12 @@ $parentRefreshIcon = '<svg fill="#ffffff" height="18px" width="18px" version="1.
                                         </div>
 
                                         <div class="form-group">
+                                            <label for="confirmElectionPass">Confirm Election Password</label>
+                                            <input type="password" class="form-control" id="confirmElectionPass"
+                                                   placeholder="Confirm Election Password">
+                                        </div>
+
+                                        <div class="form-group">
                                             <label for="electionstatus">Election Status</label>
 
                                             <select name="electionstatus" type="text" id="electionstatus"

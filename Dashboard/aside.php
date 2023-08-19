@@ -27,6 +27,9 @@ $parentRefreshIcon = '<svg fill="#ffffff" height="18px" width="18px" version="1.
                         <i class="right fas fa-angle-left"></i>
                     </p>
                 </a>
+                <script>
+                    var passwordMatched = true;
+                </script>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
                         <a href="#" class="nav-link" id="electionEditBtn" data-toggle="modal" data-target="#electionModal">
@@ -55,15 +58,21 @@ $parentRefreshIcon = '<svg fill="#ffffff" height="18px" width="18px" version="1.
                                                    placeholder="Election Title">
                                         </div>
                                         <div class="form-group">
-                                            <label for="electionpass">Election Password</label>
-                                            <input type="password" class="form-control" id="electionpass"
-                                                   placeholder="Election Password">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="confirmElectionPass">Confirm Election Password</label>
-                                            <input type="password" class="form-control" id="confirmElectionPass"
-                                                   placeholder="Confirm Election Password">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label for="electionpass">Election Password</label>
+                                                    <input type="password" class="form-control" id="electionpass"
+                                                           placeholder="Election Password">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="confirmElectionPass">Confirm Election Password</label>
+                                                    <input type="password" class="form-control" id="confirmElectionPass"
+                                                           placeholder="Confirm Election Password">
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <p style="margin-bottom: 0; color: red" id="confirmPassErrMsg"></p>
+                                                </div>
+                                            </div>
                                         </div>
 
                                         <div class="form-group">
@@ -92,7 +101,7 @@ $parentRefreshIcon = '<svg fill="#ffffff" height="18px" width="18px" version="1.
                                         <button type="button" class="btn btn-secondary"
                                                 data-dismiss="modal">Close</button>
                                         <button type="submit" name="button" class="btn btn-primary"
-                                                onclick="electiontitle();">Save</button>
+                                                onclick="electiontitle(passwordMatched);">Save</button>
                                     </div>
                                 </div>
                             </div>
@@ -100,6 +109,22 @@ $parentRefreshIcon = '<svg fill="#ffffff" height="18px" width="18px" version="1.
                         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
                         <script>
                             $(document).ready(function () {
+                                /*Confirm Election Password Code*/
+                                var passwordInput = $("#electionpass");
+                                var confirmPasswordInput = $("#confirmElectionPass");
+                                confirmPasswordInput.on("keyup", function() {
+                                    var password = passwordInput.val();
+                                    var confirmPassword = confirmPasswordInput.val();
+                                    if (password !== confirmPassword) {
+                                        $('#confirmPassErrMsg').text("Passwords do not match.");
+                                        passwordMatched = false;
+                                    } else {
+                                        passwordMatched = true;
+                                        $('#confirmPassErrMsg').text("");
+                                    }
+                                });
+                                /*Confirm Election Password Code*/
+
                                 $('#electionEditBtn').on('click', function () {
                                     $.ajax({
                                         url: "/evoting/Dashboard/electioninfo/getElectionDetailsData.php",
@@ -111,6 +136,7 @@ $parentRefreshIcon = '<svg fill="#ffffff" height="18px" width="18px" version="1.
                                                 console.log(response);
                                                 $('#electiontitle').val(response.electiontitle)
                                                 $('#electionpass').val(response.electionpassword)
+                                                $('#confirmElectionPass').val(response.electionpassword)
                                                 $(`#electionstatus option[value=${response.electionstatus}]`).prop('selected', true)
                                                 $('#starttime').val(response.electionstartdatetime)
                                                 $('#endtime').val(response.electionenddatetime)
@@ -123,27 +149,31 @@ $parentRefreshIcon = '<svg fill="#ffffff" height="18px" width="18px" version="1.
                                 })
                             })
 
-                            function electiontitle() {
+                            function electiontitle(passwordMatched) {
                                 var electiontitle = $('#electiontitle').val();
                                 var electionpass = $('#electionpass').val();
                                 var electionstatus = $('#electionstatus').val();
                                 var starttime = $('#starttime').val();
                                 var endtime = $('#endtime').val();
-                                $.ajax({
-                                    url: "/evoting/Dashboard/electioninfo/addelection.php",
-                                    type: 'post',
-                                    data: {
-                                        electiontitle: electiontitle,
-                                        electionpass: electionpass,
-                                        electionstatus: electionstatus,
-                                        starttime: starttime,
-                                        endtime: endtime
-                                    },
-                                    success: function (data, status) {
-                                        $('#electionModal').modal('hide');
-                                        // electiondisplay();
-                                    }
-                                });
+                                if (passwordMatched) {
+                                    $.ajax({
+                                        url: "/evoting/Dashboard/electioninfo/addelection.php",
+                                        type: 'post',
+                                        data: {
+                                            electiontitle: electiontitle,
+                                            electionpass: electionpass,
+                                            electionstatus: electionstatus,
+                                            starttime: starttime,
+                                            endtime: endtime
+                                        },
+                                        success: function (data, status) {
+                                            $('#electionModal').modal('hide');
+                                            // electiondisplay();
+                                        }
+                                    });
+                                }else {
+                                    alert("Confirm Election Password did not match!")
+                                }
 
                             };
                         </script>

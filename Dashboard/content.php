@@ -1,3 +1,33 @@
+<?php
+include "./php/db.php";
+
+$votersCount = 0;
+$candidateCount = 0;
+$postCount = 0;
+
+$voterCountQuery = "SELECT COUNT(*) FROM `voterinfo`;";
+$voterResult = $conn->query($voterCountQuery);
+
+if ($voterResult->num_rows > 0) {
+    $row1 = $voterResult->fetch_assoc();
+    $votersCount = $row1["COUNT(*)"];
+}
+
+$candidateCountQuery = "SELECT COUNT(*) FROM `candidateinfo`;";
+$candidateResult = $conn->query($candidateCountQuery);
+if ($candidateResult->num_rows > 0) {
+    $row2 = $candidateResult->fetch_assoc();
+    $candidateCount = $row2["COUNT(*)"];
+}
+
+$postCountQuery = "SELECT COUNT(*) FROM `postinfo`;";
+$postResult = $conn->query($postCountQuery);
+if ($postResult->num_rows > 0) {
+    $row3 = $postResult->fetch_assoc();
+    $postCount = $row3["COUNT(*)"];
+}
+
+?>
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper" style="background-image:url(img/dashbg.png);background-position:center;
     background-size:calc(900px);background-repeat:no-repeat;">
@@ -39,14 +69,14 @@
                         <!-- small box -->
                         <div class="small-box bg-info">
                             <div class="inner">
-                                <h3>150</h3>
+                                <h3><?=$votersCount?></h3>
 
                                 <p>Voter Info</p>
                             </div>
                             <div class="icon">
                                 <i class="gg-eye-alt"></i>
                             </div>
-                            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                            <a href="/evoting/Dashboard/voterinfo/Voterlist.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->
@@ -54,14 +84,14 @@
                         <!-- small box -->
                         <div class="small-box bg-success">
                             <div class="inner">
-                                <h3>53<sup style="font-size: 20px">%</sup></h3>
+                                <h3><?=$candidateCount?></h3>
 
                                 <p>Candidate Info</p>
                             </div>
                             <div class="icon">
                                 <i class="ion ion-stats-bars"></i>
                             </div>
-                            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                            <a href="/evoting/Dashboard/candidate/candidatelist.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->
@@ -69,14 +99,14 @@
                         <!-- small box -->
                         <div class="small-box bg-warning">
                             <div class="inner">
-                                <h3>44</h3>
+                                <h3><?=$postCount?></h3>
 
                                 <p>Post Info</p>
                             </div>
                             <div class="icon">
                                 <i class="ion ion-person-add"></i>
                             </div>
-                            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                            <a href="/evoting/Dashboard/postinfo/viewpost.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->
@@ -84,14 +114,14 @@
                         <!-- small box -->
                         <div class="small-box bg-danger">
                             <div class="inner">
-                                <h3>65</h3>
+                                <h3><img src="https://cdn-icons-png.flaticon.com/512/5191/5191745.png" height="37" width="50" alt=""></h3>
 
                                 <p>View Result</p>
                             </div>
                             <div class="icon">
                                 <i class="ion ion-pie-graph"></i>
                             </div>
-                            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                            <a href="/evoting/Dashboard/report/index.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->

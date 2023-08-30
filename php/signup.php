@@ -6,14 +6,10 @@ $email = $_POST['email'];
 $password = mysqli_real_escape_string($conn, $_POST['pass']);
 $cpassword = mysqli_real_escape_string($conn, $_POST['cpass']);
 $email_verification_status = '0';
-// $last_id = $_POST['adminid'];
-
 // checking fields are not empty
 if (!empty($email) && !empty($password) && !empty($cpassword)) {
-
     //if email is valid
     if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-
         //checking email already exists
         $sql = mysqli_query($conn, "SELECT email FROM admininfo WHERE email = '{$email}'");
         if (mysqli_num_rows($sql) > 0) {
@@ -25,11 +21,7 @@ if (!empty($email) && !empty($password) && !empty($cpassword)) {
                 $random_id = "Subadmin" . $code . "_" . $last_id;
                 $query = "UPDATE admininfo SET adminid = '" . $random_id . "' WHERE  adminid = '" . $random_id . "'";
                 $res = mysqli_query($conn, $query);
-
-                //let's check user upload file or not
                 $otp = mt_rand(111111, 999999);
-                // $last_id = rand(time(), 10000000);
-                // let's start insert data into table
                 $password = password_hash($password, PASSWORD_BCRYPT);
 
 
@@ -63,21 +55,14 @@ if (!empty($email) && !empty($password) && !empty($cpassword)) {
                                 echo "Something Went Wrong" . mysqli_error($conn);
                             }
                         }
-
-                        // mail function end
-
                     }
                     }
 
                 } else {
                     echo "Something Went wrong! " . mysqli_error($conn);
                 }
-
-
-
             } else {
                 echo "Confirm Password Doesn't Match";
-
             }
         }
 
